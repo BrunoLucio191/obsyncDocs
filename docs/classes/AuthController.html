@@ -11,7 +11,7 @@
 <li><a href="" aria-current="page">AuthController</a></li></ul>
 <h1>Class AuthController</h1></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/Server/ExpressServer/controllers/AuthController.ts#L25">backend/Server/ExpressServer/controllers/AuthController.ts:25</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L25">backend/Server/ExpressServer/controllers/AuthController.ts:25</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -22,8 +22,19 @@
 <div class="tsd-index-list"><a href="#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a>
 </div></section>
 <section class="tsd-index-section">
+<h3 class="tsd-index-heading tsd-anchor-link" id="properties">Properties<a href="#properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-index-list"><a href="#accountloginratelimiter" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#account<wbr/>Login<wbr/>Rate<wbr/>Limiter</span></a>
+<a href="#authservice" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#auth<wbr/>Service</span></a>
+<a href="#dbservice" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#db<wbr/>Service</span></a>
+<a href="#iploginratelimiter" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#ip<wbr/>Login<wbr/>Rate<wbr/>Limiter</span></a>
+<a href="#passwordchangeratelimiter" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#password<wbr/>Change<wbr/>Rate<wbr/>Limiter</span></a>
+<a href="#queuemanager" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#queue<wbr/>Manager</span></a>
+<a href="#tokenservice" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#token<wbr/>Service</span></a>
+</div></section>
+<section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list"><a href="#changecolor" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>change<wbr/>Color</span></a>
+<div class="tsd-index-list"><a href="#currentuser" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#current<wbr/>User</span></a>
+<a href="#changecolor" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>change<wbr/>Color</span></a>
 <a href="#changepassword" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>change<wbr/>Password</span></a>
 <a href="#login" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>login</span></a>
 <a href="#logout" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>logout</span></a>
@@ -46,10 +57,61 @@
 <li><span><span class="tsd-kind-parameter">__namedParameters</span>: <a href="../types/AuthControllerContructor.html" class="tsd-signature-type tsd-kind-type-alias">AuthControllerContructor</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">AuthController</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/Server/ExpressServer/controllers/AuthController.ts#L33">backend/Server/ExpressServer/controllers/AuthController.ts:33</a></li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L33">backend/Server/ExpressServer/controllers/AuthController.ts:33</a></li></ul></aside></div></li></ul></section></section></details>
+<details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
+<section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="accountloginratelimiter"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#account<wbr/>Login<wbr/>Rate<wbr/>Limiter</span><a href="#accountloginratelimiter" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#accountLoginRateLimiter&quot;</span><span class="tsd-signature-symbol">:</span> <a href="LoginRateLimiter.html" class="tsd-signature-type tsd-kind-class">LoginRateLimiter</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L26">backend/Server/ExpressServer/controllers/AuthController.ts:26</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="authservice"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#auth<wbr/>Service</span><a href="#authservice" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#authService&quot;</span><span class="tsd-signature-symbol">:</span> <a href="AuthService.html" class="tsd-signature-type tsd-kind-class">AuthService</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L28">backend/Server/ExpressServer/controllers/AuthController.ts:28</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="dbservice"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#db<wbr/>Service</span><a href="#dbservice" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#dbService&quot;</span><span class="tsd-signature-symbol">:</span> <a href="DBServices.html" class="tsd-signature-type tsd-kind-class">DBServices</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L32">backend/Server/ExpressServer/controllers/AuthController.ts:32</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="iploginratelimiter"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#ip<wbr/>Login<wbr/>Rate<wbr/>Limiter</span><a href="#iploginratelimiter" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#ipLoginRateLimiter&quot;</span><span class="tsd-signature-symbol">:</span> <a href="LoginRateLimiter.html" class="tsd-signature-type tsd-kind-class">LoginRateLimiter</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L27">backend/Server/ExpressServer/controllers/AuthController.ts:27</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="passwordchangeratelimiter"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#password<wbr/>Change<wbr/>Rate<wbr/>Limiter</span><a href="#passwordchangeratelimiter" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#passwordChangeRateLimiter&quot;</span><span class="tsd-signature-symbol">:</span> <a href="LoginRateLimiter.html" class="tsd-signature-type tsd-kind-class">LoginRateLimiter</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L30">backend/Server/ExpressServer/controllers/AuthController.ts:30</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="queuemanager"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#queue<wbr/>Manager</span><a href="#queuemanager" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#queueManager&quot;</span><span class="tsd-signature-symbol">:</span> <a href="QueueManager.html" class="tsd-signature-type tsd-kind-class">QueueManager</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L31">backend/Server/ExpressServer/controllers/AuthController.ts:31</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="tokenservice"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#token<wbr/>Service</span><a href="#tokenservice" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#tokenService&quot;</span><span class="tsd-signature-symbol">:</span> <a href="TokenService.html" class="tsd-signature-type tsd-kind-class">TokenService</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L29">backend/Server/ExpressServer/controllers/AuthController.ts:29</a></li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="currentuser"><code class="tsd-tag">Private</code><span>#current<wbr/>User</span><a href="#currentuser" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-private">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="currentuser-1"><span class="tsd-kind-call-signature">&quot;#currentUser&quot;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">res</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Response</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="../types/AuthenticatedUser.html" class="tsd-signature-type tsd-kind-type-alias">AuthenticatedUser</a><a href="#currentuser-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">Response</span></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="../types/AuthenticatedUser.html" class="tsd-signature-type tsd-kind-type-alias">AuthenticatedUser</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L259">backend/Server/ExpressServer/controllers/AuthController.ts:259</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="changecolor"><span>change<wbr/>Color</span><a href="#changecolor" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -63,7 +125,7 @@
 <li><span><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">Response</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/Server/ExpressServer/controllers/AuthController.ts#L224">backend/Server/ExpressServer/controllers/AuthController.ts:224</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L224">backend/Server/ExpressServer/controllers/AuthController.ts:224</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="changepassword"><span>change<wbr/>Password</span><a href="#changepassword" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -77,7 +139,7 @@
 <li><span><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">Response</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/Server/ExpressServer/controllers/AuthController.ts#L162">backend/Server/ExpressServer/controllers/AuthController.ts:162</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L162">backend/Server/ExpressServer/controllers/AuthController.ts:162</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="login"><span>login</span><a href="#login" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -91,7 +153,7 @@
 <li><span><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">Response</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/Server/ExpressServer/controllers/AuthController.ts#L50">backend/Server/ExpressServer/controllers/AuthController.ts:50</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L50">backend/Server/ExpressServer/controllers/AuthController.ts:50</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="logout"><span>logout</span><a href="#logout" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -105,7 +167,7 @@
 <li><span><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">Response</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/Server/ExpressServer/controllers/AuthController.ts#L127">backend/Server/ExpressServer/controllers/AuthController.ts:127</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L127">backend/Server/ExpressServer/controllers/AuthController.ts:127</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="me"><span>me</span><a href="#me" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -119,7 +181,7 @@
 <li><span><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">Response</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/Server/ExpressServer/controllers/AuthController.ts#L136">backend/Server/ExpressServer/controllers/AuthController.ts:136</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L136">backend/Server/ExpressServer/controllers/AuthController.ts:136</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="refreash"><span>refreash</span><a href="#refreash" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -133,7 +195,7 @@
 <li><span><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">Response</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/Server/ExpressServer/controllers/AuthController.ts#L115">backend/Server/ExpressServer/controllers/AuthController.ts:115</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L115">backend/Server/ExpressServer/controllers/AuthController.ts:115</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="wsticket"><span>ws<wbr/>Ticket</span><a href="#wsticket" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -147,7 +209,7 @@
 <li><span><span class="tsd-kind-parameter">res</span>: <span class="tsd-signature-type">Response</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/Server/ExpressServer/controllers/AuthController.ts#L140">backend/Server/ExpressServer/controllers/AuthController.ts:140</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/Server/ExpressServer/controllers/AuthController.ts#L140">backend/Server/ExpressServer/controllers/AuthController.ts:140</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -166,8 +228,10 @@
 <div class="tsd-accordion-details">
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
+<details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
+<div><a href="#accountloginratelimiter" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#account<wbr/>Login<wbr/>Rate<wbr/>Limiter</span></a><a href="#authservice" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#auth<wbr/>Service</span></a><a href="#dbservice" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#db<wbr/>Service</span></a><a href="#iploginratelimiter" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#ip<wbr/>Login<wbr/>Rate<wbr/>Limiter</span></a><a href="#passwordchangeratelimiter" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#password<wbr/>Change<wbr/>Rate<wbr/>Limiter</span></a><a href="#queuemanager" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#queue<wbr/>Manager</span></a><a href="#tokenservice" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#token<wbr/>Service</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#changecolor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>change<wbr/>Color</span></a><a href="#changepassword"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>change<wbr/>Password</span></a><a href="#login"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>login</span></a><a href="#logout"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>logout</span></a><a href="#me"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>me</span></a><a href="#refreash"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>refreash</span></a><a href="#wsticket"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>ws<wbr/>Ticket</span></a></div></details></div></details></div>
+<div><a href="#currentuser" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#current<wbr/>User</span></a><a href="#changecolor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>change<wbr/>Color</span></a><a href="#changepassword"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>change<wbr/>Password</span></a><a href="#login"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>login</span></a><a href="#logout"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>logout</span></a><a href="#me"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>me</span></a><a href="#refreash"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>refreash</span></a><a href="#wsticket"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>ws<wbr/>Ticket</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html">obsync</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">

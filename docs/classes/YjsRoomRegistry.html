@@ -14,7 +14,7 @@
 <div class="tsd-comment tsd-typography"><p>A room lives while it has connections or reservations, then is flushed and destroyed.</p>
 </div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L9">backend/yjs/yjsRooms/YjsRoomRegistry.ts:9</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L9">backend/yjs/yjsRooms/YjsRoomRegistry.ts:9</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -25,8 +25,16 @@
 <div class="tsd-index-list"><a href="#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a>
 </div></section>
 <section class="tsd-index-section">
+<h3 class="tsd-index-heading tsd-anchor-link" id="properties">Properties<a href="#properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-index-list"><a href="#deletedpaths" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#deleted<wbr/>Paths</span></a>
+<a href="#persistence" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#persistence</span></a>
+<a href="#rooms" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#rooms</span></a>
+</div></section>
+<section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list"><a href="#invalidateunderpath" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>invalidate<wbr/>Under<wbr/>Path</span></a>
+<div class="tsd-index-list"><a href="#create" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#create</span></a>
+<a href="#schedulecleanup" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#schedule<wbr/>Cleanup</span></a>
+<a href="#invalidateunderpath" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>invalidate<wbr/>Under<wbr/>Path</span></a>
 <a href="#release" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a>
 <a href="#reserve" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reserve</span></a>
 </div></section></div></details></section></section>
@@ -46,10 +54,57 @@
 <li><span><span class="tsd-kind-parameter">persistence</span>: <a href="YjsPersistenceGateway.html" class="tsd-signature-type tsd-kind-class">YjsPersistenceGateway</a></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">YjsRoomRegistry</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L14">backend/yjs/yjsRooms/YjsRoomRegistry.ts:14</a></li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L14">backend/yjs/yjsRooms/YjsRoomRegistry.ts:14</a></li></ul></aside></div></li></ul></section></section></details>
+<details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
+<section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="deletedpaths"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#deleted<wbr/>Paths</span><a href="#deletedpaths" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#deletedPaths&quot;</span><span class="tsd-signature-symbol">:</span> <a href="DeletedPathRegistry.html" class="tsd-signature-type tsd-kind-class">DeletedPathRegistry</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L11">backend/yjs/yjsRooms/YjsRoomRegistry.ts:11</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="persistence"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#persistence</span><a href="#persistence" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#persistence&quot;</span><span class="tsd-signature-symbol">:</span> <a href="YjsPersistenceGateway.html" class="tsd-signature-type tsd-kind-class">YjsPersistenceGateway</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L12">backend/yjs/yjsRooms/YjsRoomRegistry.ts:12</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="rooms"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#rooms</span><a href="#rooms" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#rooms&quot;</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <a href="YjsRoom.html" class="tsd-signature-type tsd-kind-class">YjsRoom</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L10">backend/yjs/yjsRooms/YjsRoomRegistry.ts:10</a></li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="create"><code class="tsd-tag">Private</code><span>#create</span><a href="#create" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-private">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="create-1"><span class="tsd-kind-call-signature">&quot;#create&quot;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">docName</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">filePath</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <a href="YjsRoom.html" class="tsd-signature-type tsd-kind-class">YjsRoom</a><a href="#create-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">docName</span>: <span class="tsd-signature-type">string</span></span></li>
+<li><span><span class="tsd-kind-parameter">filePath</span>: <span class="tsd-signature-type">string</span></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="YjsRoom.html" class="tsd-signature-type tsd-kind-class">YjsRoom</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L53">backend/yjs/yjsRooms/YjsRoomRegistry.ts:53</a></li></ul></aside></div></li></ul></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="schedulecleanup"><code class="tsd-tag">Private</code><span>#schedule<wbr/>Cleanup</span><a href="#schedulecleanup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-is-private">
+<li class="">
+<div class="tsd-signature tsd-anchor-link" id="schedulecleanup-1"><span class="tsd-kind-call-signature">&quot;#scheduleCleanup&quot;</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">room</span><span class="tsd-signature-symbol">:</span> <a href="YjsRoom.html" class="tsd-signature-type tsd-kind-class">YjsRoom</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">void</span><a href="#schedulecleanup-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Re-checks after each await, so a connection arriving mid-flush cancels the teardown.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li><span><span class="tsd-kind-parameter">room</span>: <a href="YjsRoom.html" class="tsd-signature-type tsd-kind-class">YjsRoom</a></span></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L79">backend/yjs/yjsRooms/YjsRoomRegistry.ts:79</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="invalidateunderpath"><span>invalidate<wbr/>Under<wbr/>Path</span><a href="#invalidateunderpath" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -62,7 +117,7 @@
 <li><span><span class="tsd-kind-parameter">targetPath</span>: <span class="tsd-signature-type">string</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L41">backend/yjs/yjsRooms/YjsRoomRegistry.ts:41</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L41">backend/yjs/yjsRooms/YjsRoomRegistry.ts:41</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="release"><span>release</span><a href="#release" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -76,7 +131,7 @@
 <li><span><span class="tsd-kind-parameter">connection</span>: <span class="tsd-signature-type">WebSocket</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L36">backend/yjs/yjsRooms/YjsRoomRegistry.ts:36</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L36">backend/yjs/yjsRooms/YjsRoomRegistry.ts:36</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="reserve"><span>reserve</span><a href="#reserve" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -92,7 +147,7 @@
 <li><span><span class="tsd-kind-parameter">filePath</span>: <span class="tsd-signature-type">string</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="YjsRoom.html" class="tsd-signature-type tsd-kind-class">YjsRoom</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L23">backend/yjs/yjsRooms/YjsRoomRegistry.ts:23</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/yjsRooms/YjsRoomRegistry.ts#L23">backend/yjs/yjsRooms/YjsRoomRegistry.ts:23</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -111,8 +166,10 @@
 <div class="tsd-accordion-details">
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
+<details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
+<div><a href="#deletedpaths" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#deleted<wbr/>Paths</span></a><a href="#persistence" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#persistence</span></a><a href="#rooms" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#rooms</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#invalidateunderpath"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>invalidate<wbr/>Under<wbr/>Path</span></a><a href="#release"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a><a href="#reserve"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reserve</span></a></div></details></div></details></div>
+<div><a href="#create" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#create</span></a><a href="#schedulecleanup" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>#schedule<wbr/>Cleanup</span></a><a href="#invalidateunderpath"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>invalidate<wbr/>Under<wbr/>Path</span></a><a href="#release"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>release</span></a><a href="#reserve"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>reserve</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html">obsync</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">

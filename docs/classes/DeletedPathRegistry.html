@@ -15,7 +15,7 @@
 while a room creation or flush is still running.</p>
 </div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/DeletedPathRegistry.ts#L9">backend/yjs/DeletedPathRegistry.ts:9</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/DeletedPathRegistry.ts#L9">backend/yjs/DeletedPathRegistry.ts:9</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -24,6 +24,11 @@ while a room creation or flush is still running.</p>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="constructors">Constructors<a href="#constructors" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <div class="tsd-index-list"><a href="#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading tsd-anchor-link" id="properties">Properties<a href="#properties" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-index-list"><a href="#deletedroots" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#deleted<wbr/>Roots</span></a>
+<a href="#invalidateddocuments" class="tsd-index-link tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#invalidated<wbr/>Documents</span></a>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
@@ -44,6 +49,19 @@ while a room creation or flush is still running.</p>
 <div class="tsd-signature tsd-anchor-link" id="constructordeletedpathregistry"><span class="tsd-signature-keyword">new</span> <span class="tsd-kind-constructor-signature">DeletedPathRegistry</span><span class="tsd-signature-symbol">()</span><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type tsd-kind-class">DeletedPathRegistry</a><a href="#constructordeletedpathregistry" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">DeletedPathRegistry</a></h4></div></li></ul></section></section></details>
+<details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
+<h2 class="tsd-anchor-link" id="properties-1">Properties<a href="#properties-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
+<section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="deletedroots"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#deleted<wbr/>Roots</span><a href="#deletedroots" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#deletedRoots&quot;</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Set</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/DeletedPathRegistry.ts#L10">backend/yjs/DeletedPathRegistry.ts:10</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-is-private">
+<h3 class="tsd-anchor-link" id="invalidateddocuments"><code class="tsd-tag">Private</code> <code class="tsd-tag">Readonly</code><span>#invalidated<wbr/>Documents</span><a href="#invalidateddocuments" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<div class="tsd-signature"><span class="tsd-kind-property">&quot;#invalidatedDocuments&quot;</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WeakSet</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Doc</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = ...</span></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/DeletedPathRegistry.ts#L11">backend/yjs/DeletedPathRegistry.ts:11</a></li></ul></aside></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
@@ -59,7 +77,7 @@ while a room creation or flush is still running.</p>
 <li><span><span class="tsd-kind-parameter">targetPath</span>: <span class="tsd-signature-type">string</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/DeletedPathRegistry.ts#L22">backend/yjs/DeletedPathRegistry.ts:22</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/DeletedPathRegistry.ts#L22">backend/yjs/DeletedPathRegistry.ts:22</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="cleardeleted"><span>clear<wbr/>Deleted</span><a href="#cleardeleted" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -74,7 +92,7 @@ while a room creation or flush is still running.</p>
 <li><span><span class="tsd-kind-parameter">targetPath</span>: <span class="tsd-signature-type">string</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/DeletedPathRegistry.ts#L46">backend/yjs/DeletedPathRegistry.ts:46</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/DeletedPathRegistry.ts#L46">backend/yjs/DeletedPathRegistry.ts:46</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="invalidatedocument"><span>invalidate<wbr/>Document</span><a href="#invalidatedocument" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -87,7 +105,7 @@ while a room creation or flush is still running.</p>
 <li><span><span class="tsd-kind-parameter">doc</span>: <span class="tsd-signature-type">Doc</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/DeletedPathRegistry.ts#L63">backend/yjs/DeletedPathRegistry.ts:63</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/DeletedPathRegistry.ts#L63">backend/yjs/DeletedPathRegistry.ts:63</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="isdocumentinvalidated"><span>is<wbr/>Document<wbr/>Invalidated</span><a href="#isdocumentinvalidated" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -100,7 +118,7 @@ while a room creation or flush is still running.</p>
 <li><span><span class="tsd-kind-parameter">doc</span>: <span class="tsd-signature-type">Doc</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/DeletedPathRegistry.ts#L59">backend/yjs/DeletedPathRegistry.ts:59</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/DeletedPathRegistry.ts#L59">backend/yjs/DeletedPathRegistry.ts:59</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="ispathdeleted"><span>is<wbr/>Path<wbr/>Deleted</span><a href="#ispathdeleted" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -113,7 +131,7 @@ while a room creation or flush is still running.</p>
 <li><span><span class="tsd-kind-parameter">filePath</span>: <span class="tsd-signature-type">string</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/DeletedPathRegistry.ts#L13">backend/yjs/DeletedPathRegistry.ts:13</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/DeletedPathRegistry.ts#L13">backend/yjs/DeletedPathRegistry.ts:13</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="markdeleted"><span>mark<wbr/>Deleted</span><a href="#markdeleted" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -128,7 +146,7 @@ while a room creation or flush is still running.</p>
 <li><span><span class="tsd-kind-parameter">targetPath</span>: <span class="tsd-signature-type">string</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/631b0ae8a417773ba87c528ae6b3da7bbd610ff1/backend/yjs/DeletedPathRegistry.ts#L32">backend/yjs/DeletedPathRegistry.ts:32</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/c77c1b66d446d396564963e36e4a6893c2dbd70b/backend/yjs/DeletedPathRegistry.ts#L32">backend/yjs/DeletedPathRegistry.ts:32</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -147,6 +165,8 @@ while a room creation or flush is still running.</p>
 <div class="tsd-accordion-details">
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
+<details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Properties"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Properties</summary>
+<div><a href="#deletedroots" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#deleted<wbr/>Roots</span></a><a href="#invalidateddocuments" class="tsd-is-private"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Property"><use href="../assets/icons.svg#icon-1024"></use></svg><span>#invalidated<wbr/>Documents</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
 <div><a href="#checkifismarked"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>check<wbr/>If<wbr/>Is<wbr/>Marked</span></a><a href="#cleardeleted"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>clear<wbr/>Deleted</span></a><a href="#invalidatedocument"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>invalidate<wbr/>Document</span></a><a href="#isdocumentinvalidated"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Document<wbr/>Invalidated</span></a><a href="#ispathdeleted"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>is<wbr/>Path<wbr/>Deleted</span></a><a href="#markdeleted"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mark<wbr/>Deleted</span></a></div></details></div></details></div>
 <div class="site-menu">
