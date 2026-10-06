@@ -17,13 +17,13 @@ UpdateGene controls the whole flux when it comes to deal with the gene file</p>
 <li><code>generation</code> - How many times the vault has changes.</li>
 <li><code>bytes</code> - How many bytes the vault has.</li>
 <li><code>fileCount</code> - The number of files inside the vault.</li>
-<li><code>lastModification</code> - the date and hour from the last modification in ISO forma and</li>
+<li><code>lastModification</code> - the date and hour from the last modification in ISO format</li>
 </ul>
 <p>Reads and updates go through their own queue, so an update never reads the file while
 another one is writing it, and initSync never gets a half-written gene.</p>
 </div></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L38">backend/Server/Gene.ts:38</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L37">backend/Server/Gene.ts:37</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-accordion" open><summary class="tsd-accordion-summary tsd-index-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
@@ -35,9 +35,7 @@ another one is writing it, and initSync never gets a half-written gene.</p>
 </div></section>
 <section class="tsd-index-section">
 <h3 class="tsd-index-heading tsd-anchor-link" id="methods">Methods<a href="#methods" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<div class="tsd-index-list"><a href="#comparegenes" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>compare<wbr/>Genes</span></a>
-<a href="#getbytesandnumoffiles" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Bytes<wbr/>And<wbr/>Num<wbr/>Of<wbr/>Files</span></a>
-<a href="#makenewgene" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>make<wbr/>New<wbr/>Gene</span></a>
+<div class="tsd-index-list"><a href="#getbytesandnumoffiles" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Bytes<wbr/>And<wbr/>Num<wbr/>Of<wbr/>Files</span></a>
 <a href="#mutatevaultgene" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mutate<wbr/>Vault<wbr/>Gene</span></a>
 <a href="#readgene" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>read<wbr/>Gene</span></a>
 </div></section></div></details></section></section>
@@ -53,7 +51,9 @@ another one is writing it, and initSync never gets a half-written gene.</p>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">vaultDirectory</span>: <span class="tsd-signature-type">string</span></span></li>
+<li><span><span class="tsd-kind-parameter">vaultDirectory</span>: <span class="tsd-signature-type">string</span></span>
+<div class="tsd-comment tsd-typography"><p>A valid vault directory</p>
+</div></li>
 <li><span><span class="tsd-kind-parameter">genePath</span>: <span class="tsd-signature-type">string</span></span>
 <div class="tsd-comment tsd-typography"><p>Path for the gene file</p>
 </div></li>
@@ -62,57 +62,26 @@ another one is writing it, and initSync never gets a half-written gene.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <a href="" class="tsd-signature-type tsd-kind-class">Gene</a></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L47">backend/Server/Gene.ts:47</a></li></ul></aside></div></li></ul></section></section></details>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L46">backend/Server/Gene.ts:46</a></li></ul></aside></div></li></ul></section></section></details>
 <details class="tsd-panel-group tsd-member-group tsd-accordion" open><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>
 <h2 class="tsd-anchor-link" id="methods-1">Methods<a href="#methods-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2></summary>
 <section>
 <section class="tsd-panel tsd-member">
-<h3 class="tsd-anchor-link" id="comparegenes"><span>compare<wbr/>Genes</span><a href="#comparegenes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="">
-<div class="tsd-signature tsd-anchor-link" id="comparegenes-1"><span class="tsd-kind-call-signature">compareGenes</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">gen1</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">VaultGene</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">gen2</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">VaultGene</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><a href="#comparegenes-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
-<div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>compare if two gene JSON are iqual</p>
-</div>
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">gen1</span>: <span class="tsd-signature-type">VaultGene</span></span></li>
-<li><span><span class="tsd-kind-parameter">gen2</span>: <span class="tsd-signature-type">VaultGene</span></span></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L108">backend/Server/Gene.ts:108</a></li></ul></aside></div></li></ul></section>
-<section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="getbytesandnumoffiles"><span>get<wbr/>Bytes<wbr/>And<wbr/>Num<wbr/>Of<wbr/>Files</span><a href="#getbytesandnumoffiles" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
 <li class="">
-<div class="tsd-signature tsd-anchor-link" id="getbytesandnumoffiles-1"><span class="tsd-kind-call-signature">getBytesAndNumOfFiles</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">directory</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">bytes</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">filesCount</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span> <span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#getbytesandnumoffiles-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
+<div class="tsd-signature tsd-anchor-link" id="getbytesandnumoffiles-1"><span class="tsd-kind-call-signature">getBytesAndNumOfFiles</span><span class="tsd-signature-symbol">(</span><br/>    <span class="tsd-kind-parameter">vaultDirectory</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span><br/><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">bytes</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">filesCount</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span> <span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span><a href="#getbytesandnumoffiles-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
 <div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>returns the number of files and the byteSize from the whole vault</p>
+<div class="tsd-comment tsd-typography"><p>returns the number of files and the byteSize from the whole vault,
+doesn't count empty files neither empty folders.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">directory</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></span></li></ul></div>
+<li><span><span class="tsd-kind-parameter">vaultDirectory</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{</span> <span class="tsd-kind-property">bytes</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">;</span> <span class="tsd-kind-property">filesCount</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span> <span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L118">backend/Server/Gene.ts:118</a></li></ul></aside></div></li></ul></section>
-<section class="tsd-panel tsd-member">
-<h3 class="tsd-anchor-link" id="makenewgene"><span>make<wbr/>New<wbr/>Gene</span><a href="#makenewgene" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
-<ul class="tsd-signatures">
-<li class="">
-<div class="tsd-signature tsd-anchor-link" id="makenewgene-1"><span class="tsd-kind-call-signature">makeNewGene</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">vaultDirectory</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">,</span> <span class="tsd-kind-parameter">genePath</span><span class="tsd-signature-symbol">?:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span><a href="#makenewgene-1" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></div>
-<div class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Makes a new empty gene File</p>
-</div>
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li><span><span class="tsd-kind-parameter">vaultDirectory</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></span></li>
-<li><span><span class="tsd-kind-parameter">genePath</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></span></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
-<ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L75">backend/Server/Gene.ts:75</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L130">backend/Server/Gene.ts:130</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="mutatevaultgene"><span>mutate<wbr/>Vault<wbr/>Gene</span><a href="#mutatevaultgene" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -132,7 +101,7 @@ another one is writing it, and initSync never gets a half-written gene.</p>
 </div></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L150">backend/Server/Gene.ts:150</a></li></ul></aside></div></li></ul></section>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L162">backend/Server/Gene.ts:162</a></li></ul></aside></div></li></ul></section>
 <section class="tsd-panel tsd-member">
 <h3 class="tsd-anchor-link" id="readgene"><span>read<wbr/>Gene</span><a href="#readgene" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h3>
 <ul class="tsd-signatures">
@@ -147,7 +116,7 @@ another one is writing it, and initSync never gets a half-written gene.</p>
 <li><span><span class="tsd-kind-parameter">genePath</span>: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = ...</span></span></li></ul></div>
 <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L180">backend/Server/Gene.ts:180</a></li></ul></aside></div></li></ul></section></section></details></div>
+<li>Defined in <a href="https://github.com/BrunoLucio191/obsync/blob/68a90c61174249cf1fc4b987cb1274263dc7de67/backend/Server/Gene.ts#L197">backend/Server/Gene.ts:197</a></li></ul></aside></div></li></ul></section></section></details></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -166,7 +135,7 @@ another one is writing it, and initSync never gets a half-written gene.</p>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Constructors"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Constructors</summary>
 <div><a href="#constructor"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Constructor"><use href="../assets/icons.svg#icon-512"></use></svg><span>constructor</span></a></div></details>
 <details open class="tsd-accordion tsd-page-navigation-section"><summary class="tsd-accordion-summary" data-key="section-Methods"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="../assets/icons.svg#icon-chevronDown"></use></svg>Methods</summary>
-<div><a href="#comparegenes"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>compare<wbr/>Genes</span></a><a href="#getbytesandnumoffiles"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Bytes<wbr/>And<wbr/>Num<wbr/>Of<wbr/>Files</span></a><a href="#makenewgene"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>make<wbr/>New<wbr/>Gene</span></a><a href="#mutatevaultgene"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mutate<wbr/>Vault<wbr/>Gene</span></a><a href="#readgene"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>read<wbr/>Gene</span></a></div></details></div></details></div>
+<div><a href="#getbytesandnumoffiles"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>get<wbr/>Bytes<wbr/>And<wbr/>Num<wbr/>Of<wbr/>Files</span></a><a href="#mutatevaultgene"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>mutate<wbr/>Vault<wbr/>Gene</span></a><a href="#readgene"><svg class="tsd-kind-icon" viewBox="0 0 24 24" aria-label="Method"><use href="../assets/icons.svg#icon-2048"></use></svg><span>read<wbr/>Gene</span></a></div></details></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html">obsync</a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container">
