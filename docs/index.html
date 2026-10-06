@@ -1,0 +1,486 @@
+<!DOCTYPE html><html class="default" lang="en" data-base="./"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>obsync</title><meta name="description" content="Documentation for obsync"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => window.app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container"><a href="index.html" class="title">obsync</a>
+<div id="tsd-toolbar-links"></div><button id="tsd-search-trigger" class="tsd-widget" aria-label="Search"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-search"></use></svg></button><dialog id="tsd-search" aria-label="Search"><input role="combobox" id="tsd-search-input" aria-controls="tsd-search-results" aria-autocomplete="list" aria-expanded="true" autocapitalize="off" autocomplete="off" placeholder="Search the docs" maxLength="100"/>
+<ul role="listbox" id="tsd-search-results"></ul>
+<div id="tsd-search-status" aria-live="polite" aria-atomic="true">
+<div>Preparing search index...</div></div></dialog><a href="#" class="tsd-widget menu" id="tsd-toolbar-menu-trigger" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></header>
+<div class="container container-main">
+<div class="col-content">
+<div class="tsd-page-title">
+<h1>obsync</h1></div>
+<div class="tsd-panel tsd-typography"><div align="center">
+<h1 id="obsync" class="tsd-anchor-link">ObSync<a href="#obsync" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1>
+<p><strong>Self-hosted, real-time collaborative Markdown editing for Obsidian.</strong></p>
+<p><img src="https://img.shields.io/badge/version-1.0.0-blue.svg" alt="Version">
+<img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&amp;logoColor=white" alt="TypeScript">
+<img src="https://img.shields.io/badge/Node.js-ESM-339933?logo=node.js&amp;logoColor=white" alt="Node.js">
+<img src="https://img.shields.io/badge/Obsidian-Plugin-7C3AED?logo=obsidian&amp;logoColor=white" alt="Obsidian">
+<img src="https://img.shields.io/badge/CRDT-Yjs-F5A623" alt="Yjs"></p>
+</div>
+<p>ObSync pairs an Obsidian plugin with a Node.js backend that you host yourself,
+allowing a collaborative vault. The note open in the editor is edited through
+<a href="https://yjs.dev">Yjs</a> over a WebSocket connection; everything else in the
+vault (files, folders, renames, binaries) is kept in sync over HTTP.</p>
+<p>There are two roles:</p>
+<ul>
+<li><strong><code>admin</code></strong> accounts publish their changes to the shared vault, so everyone
+connected sees them.</li>
+<li><strong><code>user</code></strong> accounts receive everything admins publish, but their own edits
+stay on their device and are never sent back.</li>
+</ul>
+<p>The backend is the source of truth and enforces this on its own, so the
+guarantee does not depend on the plugin behaving correctly.</p>
+<h2 id="demonstration" class="tsd-anchor-link">Demonstration<a href="#demonstration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p><img src="media/demo.gif" alt="Two accounts editing the same note in real time, with per-user awareness labels"></p>
+<h2 id="contents" class="tsd-anchor-link">Contents<a href="#contents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li><a href="#how-it-works">How it works</a></li>
+<li><a href="#getting-started">Getting started</a></li>
+<li><a href="#reaching-the-backend-from-other-devices">Reaching the backend from other devices</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#storage">Storage</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#known-issues">Known issues</a></li>
+<li><a href="#api-reference">API reference</a></li>
+</ul>
+<h2 id="how-it-works" class="tsd-anchor-link">How it works<a href="#how-it-works" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<pre><code class="text">Obsidian (plugin)                                   Backend (Node.js)
+
+admin edits active note ─── WSS /&lt;note&gt; (Yjs) ────▶ room: check role, apply, broadcast, save
+user edits active note ──── (stays local)
+any client ◀──────────────── WSS /&lt;note&gt; (Yjs) ──── room broadcasts admin edits
+admin creates/renames file ─ HTTPS /api/sync/* ───▶ write to vault, broadcast event
+any client ◀──────────────── WSS /system ────────── vault events
+plugin start ◀────────────── HTTPS /initSync ────── whole vault as ZIP (skipped if unchanged)
+</code><button type="button">Copy</button></pre>
+
+<p>There are two independent sync mechanisms:</p>
+<table>
+<thead>
+<tr>
+<th>Mechanism</th>
+<th>What it moves</th>
+<th>Transport</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Collaboration</strong></td>
+<td>The text of the note open in the editor, character by character</td>
+<td>One WebSocket per open note, Yjs protocol</td>
+</tr>
+<tr>
+<td><strong>File sync</strong></td>
+<td>Vault structure and whole-file content of everything else, binaries included</td>
+<td>HTTPS up, <code>/system</code> WebSocket events down</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Collaboration.</strong> Everyone with the same note open shares one room on the
+backend, with one <code>Y.Doc</code>. Updates from non-admin connections are dropped and
+logged as <code>[Audit] Global Yjs update blocked</code>. On a <code>user</code> client the editor's
+document is never attached to the network: the plugin keeps a separate network
+document that only receives. Each note is stored twice, as <code>.yjs-state</code> (the
+binary Yjs state, needed so reconnecting clients do not duplicate text) and as
+the readable <code>.md</code>.</p>
+<p><strong>File sync.</strong> When the plugin starts it downloads the vault as a ZIP, unless
+its saved <strong>vault gene</strong> (a fingerprint of the vault in <code>backend/data/gene.json</code>)
+still matches the server's, in which case the server answers <code>204</code>. After
+that, an admin's local creates, modifies, deletes and renames are sent over
+HTTP, and the backend broadcasts them on <code>/system</code>. Files a <code>user</code> edited
+locally are not overwritten: the plugin does a three-way merge with the last
+server version, writing conflict markers when both sides changed the same
+lines. Binaries cannot be merged, so the server version is saved next to the
+local one as <code>name (server version).ext</code>.</p>
+<p><strong>Ordering.</strong> Operations from one client run in the order they were sent (one
+queue per client id), and two operations on the same resource never overlap
+(a shared <code>KeyedLock</code>). Messages inside a collaboration room are processed in
+arrival order, only after the room has loaded its state from disk.</p>
+<h2 id="getting-started" class="tsd-anchor-link">Getting started<a href="#getting-started" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>These steps take a fresh clone to a signed-in plugin talking to your own
+backend on the same machine. Commands run from the repository root unless a
+step says otherwise.</p>
+<h3 id="requirements" class="tsd-anchor-link">Requirements<a href="#requirements" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<ul>
+<li><strong>Node.js 22.18 or newer.</strong> The backend runs <code>.ts</code> files directly and uses
+the built-in <code>node:sqlite</code> module, so there is no backend build step.</li>
+<li>Obsidian 1.13.1 or newer.</li>
+</ul>
+<h3 id="1-install-dependencies" class="tsd-anchor-link">1. Install dependencies<a href="#1-install-dependencies" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span>
+</code><button type="button">Copy</button></pre>
+
+<p>The repository is an npm workspace, so this installs both <code>backend</code> and
+<code>plugin/obSync</code>.</p>
+<h3 id="2-configure-the-backend" class="tsd-anchor-link">2. Configure the backend<a href="#2-configure-the-backend" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Generate a signing secret:</p>
+<pre><code class="bash"><span class="hl-0">openssl</span><span class="hl-1"> </span><span class="hl-2">rand</span><span class="hl-1"> </span><span class="hl-3">-base64</span><span class="hl-1"> </span><span class="hl-4">48</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Create <code>backend/.env</code>:</p>
+<pre><code class="dotenv">OBSYNC_TOKEN_SECRET=<paste the value generated above>
+PORT=3000
+OBSYNC_HOST=127.0.0.1
+OBSYNC_REQUIRE_TLS=false
+OBSYNC_TRUST_PROXY=false
+</code><button type="button">Copy</button></pre>
+
+<p>This configuration is for local development only. Changing the secret signs
+everyone out.</p>
+<h3 id="3-create-the-user-database" class="tsd-anchor-link">3. Create the user database<a href="#3-create-the-user-database" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">db:setup</span>
+</code><button type="button">Copy</button></pre>
+
+<p><code>db:setup</code> refuses to touch an existing database, and the backend refuses to
+start without one. It prints one line per seeded account with a random
+temporary password:</p>
+<pre><code class="text">[Database] Seed: initial accounts created.
+[Database]   foobar@gmail.com — temporary password (admin): Ax7f...
+[Database]   barfoo@gmail.com — temporary password (user): Qm2k...
+</code><button type="button">Copy</button></pre>
+
+<p><strong>Copy the admin password now.</strong> It is shown only once. The seed accounts are
+defined in <code>backend/users/UserDB.ts</code>. To start over, stop the backend, delete
+<code>backend/data/users.sqlite*</code> and run the command again.</p>
+<h3 id="4-start-the-backend" class="tsd-anchor-link">4. Start the backend<a href="#4-start-the-backend" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">dev</span><span class="hl-1"> </span><span class="hl-3">--workspace=backend</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Leave it running. It prints <code>Server running on http://127.0.0.1:3000</code> when it
+is ready, and restarts when a backend file changes.</p>
+<h3 id="5-build-and-install-the-plugin" class="tsd-anchor-link">5. Build and install the plugin<a href="#5-build-and-install-the-plugin" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>The build type-checks before bundling, and the bundled Web Worker file it
+needs is generated by the bundler, so a fresh clone needs one bundle first:</p>
+<pre><code class="bash"><span class="hl-0">cd</span><span class="hl-1"> </span><span class="hl-2">plugin/obSync</span><br/><span class="hl-0">node</span><span class="hl-1"> </span><span class="hl-2">esbuild.config.mjs</span><span class="hl-1"> </span><span class="hl-2">production</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">run</span><span class="hl-1"> </span><span class="hl-2">build</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Copy <code>main.js</code>, <code>manifest.json</code> and <code>styles.css</code> into
+<code>&lt;your vault&gt;/.obsidian/plugins/obsync/</code> and enable <strong>ObSync</strong> under
+<strong>Settings → Community plugins</strong>.</p>
+<h3 id="6-connect-and-sign-in" class="tsd-anchor-link">6. Connect and sign in<a href="#6-connect-and-sign-in" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Open <strong>Settings → ObSync</strong>, enter <code>http://127.0.0.1:3000</code> as the
+<strong>Backend server URL</strong>, save, and sign in with the admin account. Use
+<code>127.0.0.1</code> rather than <code>localhost</code>, which may resolve to IPv6 where nothing is
+listening.</p>
+<h3 id="7-change-the-temporary-password" class="tsd-anchor-link">7. Change the temporary password<a href="#7-change-the-temporary-password" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Go to <strong>Settings → ObSync → Account</strong> and set a real password. If you forget
+it, you have to re-create the user database.</p>
+<h3 id="8-try-it-with-two-accounts" class="tsd-anchor-link">8. Try it with two accounts<a href="#8-try-it-with-two-accounts" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Sign in as the <code>user</code> seed account in a second vault (or a second device) and
+open the same note in both. Text typed by the admin appears in both; text typed
+by the user stays only on the user's side. New accounts are created under
+<strong>Settings → ObSync → User management</strong>.</p>
+<h3 id="installing-from-the-obsidian-community-plugins-directory" class="tsd-anchor-link">Installing from the Obsidian Community Plugins directory<a href="#installing-from-the-obsidian-community-plugins-directory" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Only the person running the backend needs steps 1 to 4. Everyone else installs
+ObSync from <strong>Settings → Community plugins → Browse</strong> and starts at step 6 with
+the backend URL and an account provided by that person.</p>
+<h2 id="reaching-the-backend-from-other-devices" class="tsd-anchor-link">Reaching the backend from other devices<a href="#reaching-the-backend-from-other-devices" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<h3 id="loopback-and-allowed-addresses" class="tsd-anchor-link">Loopback and allowed addresses<a href="#loopback-and-allowed-addresses" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>A loopback address is one a machine uses to talk to itself. Traffic sent to it
+never leaves the machine, so nobody on the network can read it, and plain HTTP
+is safe there. ObSync recognizes exactly three loopback hosts: <code>127.0.0.1</code>,
+<code>::1</code> and <code>localhost</code>. Any other address, including other <code>127.x.x.x</code>
+addresses, counts as non-loopback.</p>
+<p><strong>Backend (<code>OBSYNC_HOST</code>).</strong> Any address is accepted, but a non-loopback one
+such as <code>192.168.1.50</code> or <code>0.0.0.0</code> only starts with <code>OBSYNC_REQUIRE_TLS=true</code>
+and <code>OBSYNC_TRUST_PROXY=true</code>. The backend never handles TLS itself: it trusts
+<code>X-Forwarded-Proto: https</code> from a reverse proxy and rejects anything else with
+<code>426</code>.</p>
+<p>It accepts that header from any sender. If the backend listens on a network
+address, any machine that can reach port 3000 can send the header over plain
+HTTP and pass the check. Keep <code>OBSYNC_HOST=127.0.0.1</code> with the proxy on the
+same machine, or firewall port 3000 so only the proxy can reach it.</p>
+<p><strong>Plugin (backend URL).</strong> <code>http://</code> is accepted only for the three loopback
+hosts. Anything else must be <code>https://</code>; the WebSocket URL becomes <code>wss://</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Backend URL in the plugin</th>
+<th>Accepted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>http://127.0.0.1:3000</code></td>
+<td>Yes, loopback</td>
+</tr>
+<tr>
+<td><code>https://192.168.1.50:8443</code></td>
+<td>Yes, HTTPS through the proxy</td>
+</tr>
+<tr>
+<td><code>https://obsync.example.com</code></td>
+<td>Yes, HTTPS through the proxy</td>
+</tr>
+<tr>
+<td><code>http://192.168.1.50:3000</code></td>
+<td>No, plain HTTP on a network address</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-caddy-on-your-lan" class="tsd-anchor-link">Example: Caddy on your LAN<a href="#example-caddy-on-your-lan" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3>
+<p>Run <a href="https://caddyserver.com">Caddy</a> on the backend machine:</p>
+<pre><code class="text"># Caddyfile, with the LAN IP of the machine running Caddy
+https://192.168.1.50:8443 {
+	tls internal
+	reverse_proxy 127.0.0.1:3000
+}
+</code><button type="button">Copy</button></pre>
+
+<p>The site address must include the IP: with a bare <code>:8443</code> Caddy issues no
+certificate and the handshake fails. Give the machine a fixed IP, since the
+certificate is valid for that IP only.</p>
+<ol>
+<li>In <code>backend/.env</code>, keep <code>OBSYNC_HOST=127.0.0.1</code> and set
+<code>OBSYNC_REQUIRE_TLS=true</code> and <code>OBSYNC_TRUST_PROXY=true</code>. From then on every
+client, including the one on the backend machine, uses
+<code>https://&lt;lan-ip&gt;:8443</code>.</li>
+<li>Run <code>caddy run --config Caddyfile</code> and open port 8443 in the firewall.</li>
+<li>Run <code>caddy trust</code>, then install Caddy's root certificate
+(<code>pki/authorities/local/root.crt</code> inside Caddy's data folder) on every other
+device. On iOS, also enable it under Settings → General → About →
+Certificate Trust Settings. Android ignores user-installed certificates in
+most apps, so Obsidian there will likely reject it.</li>
+</ol>
+<p>For a public server, use a real domain and let Caddy get a public certificate
+instead of <code>tls internal</code>.</p>
+<h2 id="security" class="tsd-anchor-link">Security<a href="#security" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Credential</th>
+<th>Lifetime</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access token (signed JWT)</td>
+<td>15 minutes</td>
+<td><code>Authorization: Bearer</code> on HTTP requests</td>
+</tr>
+<tr>
+<td>Refresh token</td>
+<td>30 days, rotated on every use</td>
+<td>Getting a new access token</td>
+</tr>
+<tr>
+<td>WebSocket ticket</td>
+<td>30 seconds, one use, one channel</td>
+<td>Opening exactly one WebSocket</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Every credential belongs to a session kept <strong>in memory</strong>, so logout and
+revocation are immediate, and <strong>restarting the backend signs everyone out</strong>.</li>
+<li>Every request reloads the user from SQLite, so a role change applies at once.
+Changing a user's role, status or name closes their sockets, and the
+reconnect picks up the new role.</li>
+<li>The browser WebSocket API cannot send an <code>Authorization</code> header, so the
+plugin trades its access token for a ticket and sends it in
+<code>Sec-WebSocket-Protocol</code>.</li>
+<li>Passwords are hashed with scrypt. Login is blocked for 15 minutes after 5
+failures for one account or 25 from one IP.</li>
+<li>Tokens are stored in Obsidian's <code>SecretStorage</code>, never in <code>data.json</code>.</li>
+<li><code>/system</code> is receive-only: any message from a client closes the socket.</li>
+</ul>
+<h2 id="storage" class="tsd-anchor-link">Storage<a href="#storage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Where</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>backend/data/users.sqlite</code></td>
+<td>Accounts and roles</td>
+</tr>
+<tr>
+<td><code>backend/data/vault/</code></td>
+<td>The canonical shared vault, as ordinary files</td>
+</tr>
+<tr>
+<td><code>backend/data/yjs-state/</code></td>
+<td>Binary Yjs state of each note ever opened in collaboration</td>
+</tr>
+<tr>
+<td><code>backend/data/gene.json</code></td>
+<td>The vault gene</td>
+</tr>
+<tr>
+<td><code>backend/data/zips/</code></td>
+<td>Temporary ZIPs for the initial download, deleted 15 s after sending</td>
+</tr>
+<tr>
+<td>Obsidian <code>SecretStorage</code></td>
+<td>Access and refresh tokens, saved vault gene</td>
+</tr>
+<tr>
+<td>Plugin <code>data.json</code></td>
+<td>Backend URL, current user, token expiry</td>
+</tr>
+<tr>
+<td>IndexedDB</td>
+<td>Yjs history per note, separate for admin and each <code>user</code>, for offline editing</td>
+</tr>
+<tr>
+<td><code>&lt;plugin folder&gt;/sync-base/</code></td>
+<td><code>user</code> accounts only: last server version of each file, the base for merges</td>
+</tr>
+</tbody>
+</table>
+<p>Everything under <code>backend/data/</code> is runtime data. There are no migrations.</p>
+<h2 id="troubleshooting" class="tsd-anchor-link">Troubleshooting<a href="#troubleshooting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>User database not found</code></td>
+<td>Run <code>npm run db:setup</code></td>
+</tr>
+<tr>
+<td><code>OBSYNC_TOKEN_SECRET must contain at least 32 random bytes</code></td>
+<td>Create <code>backend/.env</code> with a secret from <code>openssl rand -base64 48</code></td>
+</tr>
+<tr>
+<td><code>OBSYNC_REQUIRE_TLS must be true when OBSYNC_HOST is not loopback</code></td>
+<td>See <a href="#reaching-the-backend-from-other-devices">Reaching the backend from other devices</a></td>
+</tr>
+<tr>
+<td>&quot;HTTPS is required&quot; when saving the URL</td>
+<td>Use HTTPS through a proxy for any non-loopback host</td>
+</tr>
+<tr>
+<td>Plugin does nothing at startup</td>
+<td>No backend URL is saved yet; set it in <strong>Settings → ObSync</strong></td>
+</tr>
+<tr>
+<td>Signed out after restarting the backend</td>
+<td>Expected: sessions live in memory</td>
+</tr>
+<tr>
+<td><code>429 Too many login attempts</code></td>
+<td>Wait 15 minutes or restart the backend</td>
+</tr>
+<tr>
+<td>Initial download says &quot;up to date&quot; but files are missing</td>
+<td>Delete the <code>obsync-vault-gene-&lt;vault name&gt;</code> secret, or change anything in <code>backend/data/vault/</code></td>
+</tr>
+<tr>
+<td>Admin changes do not reach other clients</td>
+<td>The acting account must be <code>admin</code>; check <code>[Sync]</code> errors on the backend and that the other clients have a <code>/system</code> connection</td>
+</tr>
+<tr>
+<td>Conflict markers in a <code>user</code>'s file</td>
+<td>Both the user and an admin changed the same lines; the markers keep both versions</td>
+</tr>
+</tbody>
+</table>
+<p>WebSocket close codes:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTP <code>401</code> on upgrade</td>
+<td>Ticket missing, reused, expired, or for the other channel</td>
+</tr>
+<tr>
+<td>HTTP <code>426</code> on upgrade</td>
+<td>TLS required, but the request did not come through an HTTPS proxy</td>
+</tr>
+<tr>
+<td><code>1008</code></td>
+<td>Invalid or deleted note path, or a message sent on <code>/system</code></td>
+</tr>
+<tr>
+<td><code>1011</code></td>
+<td>The room failed to load its state from disk</td>
+</tr>
+<tr>
+<td><code>1013</code></td>
+<td>The room was shutting down or its queue was full; the client reconnects</td>
+</tr>
+<tr>
+<td><code>4003</code></td>
+<td>Access token expired, session revoked, or the user's role, status or name changed</td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-issues" class="tsd-anchor-link">Known issues<a href="#known-issues" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<ul>
+<li><code>PUT /api/sync/modify</code> rewrites the <code>.md</code> but not its <code>.yjs-state</code>. If a
+closed note that already has Yjs state is changed from outside the editor,
+the next time its room opens the old state can overwrite the change.</li>
+<li><code>YjsPersistence</code> does not take the shared <code>KeyedLock</code>, so a note write can
+overlap with an HTTP delete of the same path.</li>
+<li>Different operations on the same path from different clients (for example a
+<code>modify</code> and a <code>delete</code>) do not lock each other out.</li>
+</ul>
+<h2 id="api-reference" class="tsd-anchor-link">API reference<a href="#api-reference" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2>
+<p>The classes, endpoints and protocols are documented in the
+<a href="https://TODO-typedoc-url">API reference</a>, generated with TypeDoc.</p>
+<hr>
+<div align="center">
+<p>Made for a self-hosted, private Obsidian vault.</p>
+</div></div></div>
+<div class="col-sidebar">
+<div class="page-menu">
+<div class="tsd-navigation settings">
+<details class="tsd-accordion"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div>
+<div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><use href="assets/icons.svg#icon-chevronDown"></use></svg>
+<h3>On This Page</h3></summary>
+<div class="tsd-accordion-details"><a href="#obsync"><span>Ob<wbr/>Sync</span></a>
+<ul>
+<li><a href="#demonstration"><span>Demonstration</span></a></li>
+<li><a href="#contents"><span>Contents</span></a></li>
+<li><a href="#how-it-works"><span>How it works</span></a></li>
+<li><a href="#getting-started"><span>Getting started</span></a></li>
+<li>
+<ul>
+<li><a href="#requirements"><span>Requirements</span></a></li>
+<li><a href="#1-install-dependencies"><span>1. <wbr/>Install dependencies</span></a></li>
+<li><a href="#2-configure-the-backend"><span>2. <wbr/>Configure the backend</span></a></li>
+<li><a href="#3-create-the-user-database"><span>3. <wbr/>Create the user database</span></a></li>
+<li><a href="#4-start-the-backend"><span>4. <wbr/>Start the backend</span></a></li>
+<li><a href="#5-build-and-install-the-plugin"><span>5. <wbr/>Build and install the plugin</span></a></li>
+<li><a href="#6-connect-and-sign-in"><span>6. <wbr/>Connect and sign in</span></a></li>
+<li><a href="#7-change-the-temporary-password"><span>7. <wbr/>Change the temporary password</span></a></li>
+<li><a href="#8-try-it-with-two-accounts"><span>8. <wbr/>Try it with two accounts</span></a></li>
+<li><a href="#installing-from-the-obsidian-community-plugins-directory"><span>Installing from the <wbr/>Obsidian <wbr/>Community <wbr/>Plugins directory</span></a></li></ul></li>
+<li><a href="#reaching-the-backend-from-other-devices"><span>Reaching the backend from other devices</span></a></li>
+<li>
+<ul>
+<li><a href="#loopback-and-allowed-addresses"><span>Loopback and allowed addresses</span></a></li>
+<li><a href="#example-caddy-on-your-lan"><span>Example: <wbr/>Caddy on your <wbr/>LAN</span></a></li></ul></li>
+<li><a href="#security"><span>Security</span></a></li>
+<li><a href="#storage"><span>Storage</span></a></li>
+<li><a href="#troubleshooting"><span>Troubleshooting</span></a></li>
+<li><a href="#known-issues"><span>Known issues</span></a></li>
+<li><a href="#api-reference"><span>API reference</span></a></li></ul></div></details></div>
+<div class="site-menu">
+<nav class="tsd-navigation"><a href="modules.html">obsync</a>
+<ul class="tsd-small-nested-navigation" id="tsd-nav-container">
+<li>Loading...</li></ul></nav></div></div></div><footer>
+<p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer>
+<div class="overlay"></div></body></html>
