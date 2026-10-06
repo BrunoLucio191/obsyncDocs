@@ -20,7 +20,7 @@ The backend is the source of truth and enforces this on its own, so the guarante
 
 ## Demonstration
 
-![Two accounts editing the same note in real time, with per-user awareness labels](docs/assets/demo.gif)
+![Two accounts editing the same note in real time, with per-user awareness labels](/obsyncDocs/_assets/demonstration.74aff953.mp4)
 
 ## Contents
 
