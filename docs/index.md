@@ -20,7 +20,7 @@ The backend is the source of truth and enforces this on its own, so the guarante
 
 ## Demonstration
 
-!\[\[/docs/assets/demonstration.gif]]
+![Two accounts editing the same note in real time](/obsyncDocs/_assets/demonstration.ad3d2f47.gif)
 
 ## Contents
 
