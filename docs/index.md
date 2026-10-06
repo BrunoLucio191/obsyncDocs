@@ -20,7 +20,7 @@ The backend is the source of truth and enforces this on its own, so the guarante
 
 ## Demonstration
 
-[https://github.com/user-attachments/assets/7a3d7da4-080a-47f6-9f70-3c1c4459c838](https://github.com/user-attachments/assets/7a3d7da4-080a-47f6-9f70-3c1c4459c838)
+[](https://github.com/user-attachments/assets/7a3d7da4-080a-47f6-9f70-3c1c4459c838)
 
 ## Contents
 
