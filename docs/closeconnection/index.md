@@ -1,0 +1,30 @@
+---
+title: closeConnection
+kind: function
+longname: closeConnection
+description: The reason is cut to the protocol's 123-byte limit.
+---
+
+# closeConnection
+
+<Signature
+  code="closeConnection(
+	connection: WebSocket,
+	code: number,
+	reason: string,
+): void"
+/>
+
+<SourceLink href="/source/backend/yjs/yjsutils/wstransport-utils-ts/#L33" label="wsTransport.utils.ts:33" />
+
+The reason is cut to the protocol's 123-byte limit.
+
+**Parameters**
+
+- `connection` (WebSocket)
+- `code` (number)
+- `reason` (string)
+
+**Returns**
+
+- `void`
