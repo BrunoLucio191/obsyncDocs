@@ -1,0 +1,375 @@
+---
+title: Index
+kind: guide
+group: Source/Plugin/Obsync/Src/I18n/Locales/En Ts
+---
+
+[My Library](/)v1.0.0
+
+- [Home](/)
+- [AccessAuthorization](/accessauthorization)
+- [AccountSettingsSection](/accountsettingssection)
+- [ActiveRoom](/activeroom)
+- [ApiEndpoint](/apiendpoint)
+- [ApplyAwerenessUpdate](/applyawerenessupdate)
+- [AuthController](/authcontroller)
+- [AuthControllerContructor](/authcontrollercontructor)
+- [AuthenticatedUser](/authenticateduser)
+- [AuthMutationResult](/authmutationresult)
+- [AuthService](/authservice)
+- [AuthSession](/authsession)
+- [AwarenessChange](/awarenesschange)
+- [BackendConnectionSection](/backendconnectionsection)
+- [Backoff](/backoff)
+- [BINARY_EXTENSIONS](/binary-extensions)
+- [Boss](/boss)
+- [clearApiEndpoint](/clearapiendpoint)
+- [closeCollabRoom](/closecollabroom)
+- [closeConnection](/closeconnection)
+- [CollaborationAuth](/collaborationauth)
+- [CollaborationController](/collaborationcontroller)
+- [CollaborationUser](/collaborationuser)
+- [configureApiEndpoint](/configureapiendpoint)
+- [createUserDatabase](/createuserdatabase)
+- [CreateUserResult](/createuserresult)
+- [CreateUserSection](/createusersection)
+- [DATABASE_SETUP_COMMAND](/database-setup-command)
+- [dbEvents](/dbevents)
+- [DBServices](/dbservices)
+- [decode](/decode)
+- [default](/default)
+- [DEFAULT_CONFIG](/default-config)
+- [DEFAULT_OFFLINE_NAMESPACE](/default-offline-namespace)
+- [DeletedPathRegistry](/deletedpathregistry)
+- [encode](/encode)
+- [ensureDecoderConsumed](/ensuredecoderconsumed)
+- [ensureParentFolder](/ensureparentfolder)
+- [ExpressServer](/expressserver)
+- [FileManager](/filemanager)
+- [Gene](/gene)
+- [getApiBaseUrl](/getapibaseurl)
+- [getAwarenessPresenceIdentity](/getawarenesspresenceidentity)
+- [getCurrentCollabRoomPath](/getcurrentcollabroompath)
+- [getPresenceUser](/getpresenceuser)
+- [getWebSocketBaseUrl](/getwebsocketbaseurl)
+- [hashPassword](/hashpassword)
+- [initI18n](/initi18n)
+- [INITIAL_NETWORK_SYNC_TIMEOUT_MS](/initial-network-sync-timeout-ms)
+- [initializeOfflinePersistence](/initializeofflinepersistence)
+- [isApiEndpointConfigured](/isapiendpointconfigured)
+- [isBinaryPath](/isbinarypath)
+- [isSamePathOrChild](/issamepathorchild)
+- [KeyedLock](/keyedlock)
+- [loadServerConfig](/loadserverconfig)
+- [localizeBackendError](/localizebackenderror)
+- [LoginModal](/loginmodal)
+- [LoginRateLimit](/loginratelimit)
+- [LoginRateLimiter](/loginratelimiter)
+- [MAX_AWARENESS_ENTRIES_PER_MESSAGE](/max-awareness-entries-per-message)
+- [MAX_PENDING_MESSAGES_PER_DOCUMENT](/max-pending-messages-per-document)
+- [MAX_RECONNECT_BACKOFF_MS](/max-reconnect-backoff-ms)
+- [MAX_WS_MESSAGE_BYTES](/max-ws-message-bytes)
+- [MESSAGE_AUTH](/message-auth)
+- [MESSAGE_AWARENESS](/message-awareness)
+- [MESSAGE_QUERY_AWARENESS](/message-query-awareness)
+- [MESSAGE_SYNC](/message-sync)
+- [normalizeEmailKey](/normalizeemailkey)
+- [normalizeName](/normalizename)
+- [normalizeNameKey](/normalizenamekey)
+- [normalizePresenceId](/normalizepresenceid)
+- [normalizePresenceIdentity](/normalizepresenceidentity)
+- [normalizeUserColor](/normalizeusercolor)
+- [normalizeVaultPath](/normalizevaultpath)
+- [ObSync](/obsync)
+- [ObSyncConfig](/obsyncconfig)
+- [ObSyncSettingTab](/obsyncsettingtab)
+- [OFFLINE_NAMESPACE_VERSION](/offline-namespace-version)
+- OfflinePersistenceHandle
+- [OfflinePersistenceHandle](/offlinepersistencehandle)
+- [OfflinePersistenceOptions](/offlinepersistenceoptions)
+- [openUserDatabase](/openuserdatabase)
+- [parseDocumentIdentity](/parsedocumentidentity)
+- [passwordMatches](/passwordmatches)
+- [PathMuteRegistry](/pathmuteregistry)
+- [PERIODIC_STATE_VECTOR_SYNC_MS](/periodic-state-vector-sync-ms)
+- [PreparedCollabRoom](/preparedcollabroom)
+- [PreparedCollabRoom/connect](/preparedcollabroom/connect)
+- [PRESENCE_LEAVE_GRACE_MS](/presence-leave-grace-ms)
+- [PresenceUser](/presenceuser)
+- [publishVaultChange](/publishvaultchange)
+- [Queue](/queue)
+- [QueueManager](/queuemanager)
+- [randomUserColor](/randomusercolor)
+- [readBoundedByteArray](/readboundedbytearray)
+- [RemotePresence](/remotepresence)
+- [RemoteVaultChangeService](/remotevaultchangeservice)
+- [ResyncWarning](/resyncwarning)
+- [RouteAuth](/routeauth)
+- [RouteSyncFiles](/routesyncfiles)
+- [RouteSyncFilesContructor](/routesyncfilescontructor)
+- [RouteUsers](/routeusers)
+- [sendBinaryMessage](/sendbinarymessage)
+- [ServerConfig](/serverconfig)
+- [ServerVersionMerger](/serverversionmerger)
+- [SessionRecord](/sessionrecord)
+- [setupCollabRoom](/setupcollabroom)
+- [StoredUserRow](/storeduserrow)
+- [SyncBaseStore](/syncbasestore)
+- [SyncFilesController](/syncfilescontroller)
+- [SyncFilesControllerConstructor](/syncfilescontrollerconstructor)
+- [SyncInitialVault](/syncinitialvault)
+- [syncMessageHandler](/syncmessagehandler)
+- [SyncMessageHandlerFn](/syncmessagehandlerfn)
+- [SyncMessageHandlerParams](/syncmessagehandlerparams)
+- [SyncVaultChanges](/syncvaultchanges)
+- [SystemChannel](/systemchannel)
+- [systemPaths](/systempaths)
+- [t](/t)
+- [TokenHeader](/tokenheader)
+- [TokenPayload](/tokenpayload)
+- [TokenService](/tokenservice)
+- [TokenServiceConstructor](/tokenserviceconstructor)
+- [toUint8Array](/touint8array)
+- [UserActionResult](/useractionresult)
+- [UserAdminService](/useradminservice)
+- [UserDB](/userdb)
+- [UserDirectory](/userdirectory)
+- [UserListSection](/userlistsection)
+- [UserManagementSection](/usermanagementsection)
+- [UserMutationErrorMessage](/usermutationerrormessage)
+- [userMutationErrorStatus](/usermutationerrorstatus)
+- [UserMutationResult](/usermutationresult)
+- [UserNameEditor](/usernameeditor)
+- [UserRole](/userrole)
+- [UsersController](/userscontroller)
+- [UsersControllerConstructor](/userscontrollerconstructor)
+- [VaultChange](/vaultchange)
+- [vaultEvents](/vaultevents)
+- [WebSocketAuthorization](/websocketauthorization)
+- [WebSocketChannel](/websocketchannel)
+- [WebSocketServer](/websocketserver)
+- [WebSocketTicket](/websocketticket)
+- [webSocketTicketProtocol](/websocketticketprotocol)
+- [WebSocketTicketRecord](/websocketticketrecord)
+- [YjsAuthenticatedConnection](/yjsauthenticatedconnection)
+- [YjsAwarenessEntry](/yjsawarenessentry)
+- [YjsCollaborationServer](/yjscollaborationserver)
+- [YjsConnectionSession](/yjsconnectionsession)
+- [YjsConnectionState](/yjsconnectionstate)
+- [YjsDocumentIdentity](/yjsdocumentidentity)
+- [YjsPersistence](/yjspersistence)
+- [YjsPersistenceAdapter](/yjspersistenceadapter)
+- [YjsPersistenceGateway](/yjspersistencegateway)
+- [YjsRoom](/yjsroom)
+- [YjsRoomRegistry](/yjsroomregistry)
+- [ZipWorkerEntry](/zipworkerentry)
+- [ZipWorkerMessage](/zipworkermessage)
+- [ZipWorkerSon](/zipworkerson)
+- [Source Files](/source)
+
+plugin/obSync/src/i18n/locales/en.tstypescript
+
+```typescript
+/**
+ * English translation strings for the ObSync plugin UI, keyed by feature
+ * area (auth, userAdmin, settings, sync, collab, plugin,
+ * offlinePersistence). Consumed via `t` in `i18n.ts`. Serves as the
+ * i18next `fallbackLng` bundle.
+ */
+export default {
+	common: {
+		save: 'Save',
+		signOut: 'Sign out',
+		retry: 'Try again',
+	},
+	auth: {
+		loginTitle: 'Sign in to ObSync',
+		loginPrompt:
+			'Enter the e-mail of any account registered on the server.',
+		email: 'E-mail',
+		emailPlaceholder: 'user@example.com',
+		password: 'Password',
+		signIn: 'Sign in',
+		invalidCredentials: 'Invalid e-mail or password.',
+		sessionExpiredNotice: 'Your ObSync session has ended.',
+		sessionRefreshFailed: 'Could not refresh the ObSync session:',
+		sessionRevokeFailed: 'Could not revoke the session on the server:',
+		sessionRenewFailed: 'Could not renew the session:',
+		sessionExpired: 'Your session has expired. Sign in again.',
+		passwordChangeUnknownError: 'Could not change the password.',
+		colorChangeUnknownError: 'Could not change the cursor color.',
+		passwordTooShort:
+			'The new password must be between 6 and 128 characters.',
+		invalidCurrentPassword: 'Incorrect current password.',
+	},
+	userAdmin: {
+		signInToViewUsers: 'Sign in to ObSync to view the users.',
+		couldNotLoadUsers: 'Could not load the users.',
+		invalidUserList: 'The server returned an invalid list.',
+		signInToCreateUsers: 'Sign in to ObSync to create users.',
+		couldNotCreateUser: 'Could not create the user.',
+		serverDidNotReturnUser: 'The server did not return the new user.',
+		couldNotChangeRole: "Could not change the user's role.",
+		couldNotChangeStatus: "Could not change the user's status.",
+		couldNotDeleteUser: 'Could not delete the user.',
+		couldNotUpdateName: "Could not update the user's name.",
+		couldNotResetPassword: "Could not reset the user's password.",
+		adminsOnly: 'Only administrators can perform this action.',
+		invalidUserReturned: 'The server returned an invalid user.',
+		nameAlreadyUsedBy: 'Name already used by {{email}}.',
+		emailAlreadyExists: 'A user with that e-mail already exists.',
+		userNotFound: 'User not found.',
+		lastAdmin:
+			'This operation would leave the platform without an active administrator.',
+		invalidRole: 'Invalid user role.',
+		nameExists: 'A user with that name already exists.',
+		userCreated: 'User {{email}} created.',
+		userDeleted: 'User {{email}} deleted.',
+		roleUpdated: 'Role updated. Permissions have already been applied.',
+		userActivated: 'User activated.',
+		userDeactivated: 'User deactivated.',
+		passwordReset: "{{email}}'s password has been reset.",
+	},
+	settings: {
+		backend: {
+			heading: 'Backend connection',
+			url: 'Backend server URL',
+			urlDesc:
+				'The ObSync backend this vault syncs with. Must use HTTPS unless it is a loopback address (127.0.0.1, localhost).',
+			urlPlaceholder: 'https://sync.example.com',
+			saved: 'Backend URL saved.',
+			notConfigured: 'Set the ObSync backend URL in the plugin settings.',
+			urlRequired: 'Enter the ObSync backend URL.',
+			urlInvalid: 'Enter a valid URL, e.g. https://sync.example.com.',
+			urlRequiresHttps:
+				'The backend URL must use HTTPS outside a local (loopback) address.',
+			urlDescReadOnly:
+				'Only administrators can change the backend URL. Ask yours if this needs to change.',
+		},
+		account: {
+			heading: 'Account',
+			connectedUser: 'Connected user',
+			connectedUserDesc: '{{email}} • {{role}}',
+			roleAdmin: 'Administrator',
+			roleUser: 'Regular user',
+			yourDisplayName: 'Your display name',
+			yourDisplayNameDesc:
+				'As an administrator, you can change your own name. The change is sent automatically.',
+			displayName: 'Display name',
+			displayNameDesc:
+				'{{name}}. Only administrators can change user names.',
+			cursorColor: 'Cursor color',
+			cursorColorDesc:
+				'The color other collaborators see on your cursor and name.',
+			saveColor: 'Save color',
+			colorUpdated: 'Cursor color updated.',
+			privateMode: 'Private mode',
+			privateModeDesc:
+				"Your text edits stay only on this device. You receive global changes, but can't publish them to the shared vault.",
+			changePassword: 'Change password',
+			changePasswordDesc: '6 to 128 characters.',
+			currentPassword: 'Current password',
+			newPassword: 'New password',
+			savePassword: 'Save new password',
+			passwordUpdated: 'Password updated.',
+			session: 'Session',
+			sessionDesc:
+				'Ends the current session and lets you sign in with another account.',
+			disconnectedUser: 'Disconnected user',
+			disconnectedUserDesc:
+				'Sign in to ObSync to access synchronization and account settings.',
+		},
+		users: {
+			heading: 'User management',
+			adminOnlyDesc:
+				'Only administrators can list accounts, create users, and change names, passwords, roles, or status.',
+			registeredAccounts: 'Registered accounts',
+			loading: 'Loading users...',
+			registeredAccountsDesc:
+				'{{count}} registered users. Use the search above to filter by name or e-mail.',
+			searchAccounts: 'Search accounts',
+			searchPlaceholder: 'Name or e-mail',
+			you: ' (you)',
+			displayName: 'Display name',
+			nameSaved: 'Saved.',
+			nameUseLength: 'Use between 2 and 64 characters.',
+			nameAlreadyUsedBy: 'Name already used by {{email}}.',
+			saving: 'Saving...',
+			saveError: 'Error saving.',
+			resetPassword: 'Reset password',
+			newPasswordPlaceholder: 'New password (6-128 characters)',
+			admin: 'Administrator',
+			user: 'Regular user',
+			active: 'Active',
+			inactive: 'Deactivated',
+			yourAccount: 'Your account',
+			delete: 'Delete',
+			addUser: 'Add new user',
+			addUserDesc: 'Creates the account with the data provided above.',
+			name: 'Name',
+			namePlaceholder: 'Display name',
+			emailPlaceholder: 'user@example.com',
+			initialPassword: 'Initial password',
+			initialPasswordDesc:
+				'The password cannot be recovered. Store it somewhere safe.',
+			minCharsPlaceholder: 'At least 6 characters',
+			initialRole: 'Initial role',
+			initialRoleDesc: "The user's initial role.",
+			createUser: 'Create user',
+			createUserDesc: 'Creates the account with the data provided above.',
+		},
+	},
+	sync: {
+		invalidOrExpiredSession: 'Invalid or expired session.',
+		serverReturnedError: 'The server returned an error: {{status}}',
+		initialSyncComplete: 'Initial synchronization complete.',
+		vaultUpToDate: 'The vault is already up to date.',
+		yourVersion: 'your version',
+		serverVersion: 'server version',
+		mergeConflict:
+			'You and the server changed the same part of {{path}}. Both versions are marked in the file.',
+		adminMovedDownloaded:
+			"The admin moved {{oldPath}} to {{newPath}}. The server's version was downloaded there; your own copy, if it still exists, no longer gets updates.",
+		adminMovedYourCopy:
+			'The admin moved {{oldPath}} to {{newPath}}, so your unchanged copy at {{copyPath}} was moved there too.',
+		binaryConflict:
+			'You changed {{path}} and the server has a new version. It was saved next to yours as {{copy}}.',
+		initialSyncFailed: 'Could not sync the initial files.',
+		initialSyncError: 'Error during initial synchronization:',
+		invalidSyncEvent: 'Invalid synchronization event:',
+		publishChangeFailed:
+			'Could not send the local change in {{path}} to the server:',
+		applyRemoteChangeFailed:
+			'Could not apply the remote change in {{path}}:',
+		websocketDisconnetionFromInternet:
+			'Your network connection was interrupted while you were connected to the server.' +
+			' Obsync will automatically start a resync to receive any changes' +
+			' missed while you were offline.',
+		networkProblems: 'Network problems',
+	},
+	collab: {
+		userJoinedNote: '{{name}} joined this note.',
+		userLeftNote: '{{name}} left this note.',
+		privateModeNotice:
+			"You're in private mode: your edits stay on this device only.",
+		couldNotRestoreOfflineHistory:
+			"Could not restore this note's offline history.",
+		couldNotInitializeCollaboration:
+			'Could not initialize collaboration in {{filePath}}:',
+	},
+	plugin: {
+		loginCompletedSyncFailed:
+			'Sign-in completed, but synchronization could not be started.',
+		signInToSync: 'Sign in to use collaborative synchronization.',
+		signedOut: 'You have signed out of ObSync.',
+		syncStartFailed: 'Could not start synchronization:',
+	},
+	offlinePersistence: {
+		emptyDocumentId: 'documentId must not be empty.',
+		emptyNamespace: 'namespace must not be empty.',
+		indexedDbUnavailable: 'IndexedDB is not available in this environment.',
+	},
+};
+```
+
+My Library© 2026
