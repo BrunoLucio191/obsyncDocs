@@ -20,7 +20,7 @@ The backend is the source of truth and enforces this on its own, so the guarante
 
 ## Demonstration
 
-![Two accounts editing the same note in real time, with per-user awareness labels](/obsyncDocs/_assets/demonstration.74aff953.mp4)
+[https://github.com/user-attachments/assets/7a3d7da4-080a-47f6-9f70-3c1c4459c838](https://github.com/user-attachments/assets/7a3d7da4-080a-47f6-9f70-3c1c4459c838)
 
 ## Contents
 
@@ -243,12 +243,6 @@ WebSocket close codes:
 | `1011`                | The room failed to load its state from disk                                       |
 | `1013`                | The room was shutting down or its queue was full; the client reconnects           |
 | `4003`                | Access token expired, session revoked, or the user's role, status or name changed |
-
-## Known issues
-
-- `PUT /api/sync/modify` rewrites the `.md` but not its `.yjs-state`. If a closed note that already has Yjs state is changed from outside the editor, the next time its room opens the old state can overwrite the change.
-- `YjsPersistence` does not take the shared `KeyedLock`, so a note write can overlap with an HTTP delete of the same path.
-- Different operations on the same path from different clients (for example a `modify` and a `delete`) do not lock each other out.
 
 ## API reference
 
