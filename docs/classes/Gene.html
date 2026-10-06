@@ -13,10 +13,12 @@
 <section class="tsd-panel tsd-comment">
 <div class="tsd-comment tsd-typography"><p>The gene file is responsible for tracking the changes inside the vault.
 UpdateGene controls the whole flux when it comes to deal with the gene file</p>
-<p><code>generation</code> - How many times the vault has changes.
-<code>bytes</code> - How many bytes the vault has.
-<code>fileCount</code> - The number of files inside the vault.
-<code>lastModification</code> - the date and hour from the last modification in ISO forma and</p>
+<ul>
+<li><code>generation</code> - How many times the vault has changes.</li>
+<li><code>bytes</code> - How many bytes the vault has.</li>
+<li><code>fileCount</code> - The number of files inside the vault.</li>
+<li><code>lastModification</code> - the date and hour from the last modification in ISO forma and</li>
+</ul>
 <p>Reads and updates go through their own queue, so an update never reads the file while
 another one is writing it, and initSync never gets a half-written gene.</p>
 </div></section><aside class="tsd-sources">
