@@ -7,7 +7,7 @@ description: Client for the admin-only user endpoints.
 
 # UserAdminService
 
-<SourceLink href="/source/plugin/obsync/src/auth/useradminservice-ts/#L18" label="UserAdminService.ts:18" />
+<SourceLink href="/source/plugin/obsync/src/auth/useradminservice-ts/#L20" label="UserAdminService.ts:20" />
 
 Client for the admin-only user endpoints.
 
@@ -30,6 +30,29 @@ Client for the admin-only user endpoints.
 ## Methods
 
 <MemberHeading
+  id="changeuserpassword"
+  depth="3"
+  name="changeUserPassword"
+  sig="changeUserPassword(
+	userId: number,
+	newPassword: string,
+): Promise<UserActionResult<AuthenticatedUser>>"
+/>
+
+<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L165" sourceLabel="UserAdminService.ts:165" />
+
+changes user password
+
+**Parameters**
+
+- `userId` (number)
+- `newPassword` (string)
+
+**Returns**
+
+- `Promise<`[`UserActionResult`](/module/plugin-obsync-src-auth-auth/types/useractionresult)`<AuthenticatedUser>>`
+
+<MemberHeading
   id="createuser"
   depth="3"
   name="createUser"
@@ -38,7 +61,9 @@ Client for the admin-only user endpoints.
 ): Promise<UserActionResult<AuthenticatedUser>>"
 />
 
-<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L62" sourceLabel="UserAdminService.ts:62" />
+<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L71" sourceLabel="UserAdminService.ts:71" />
+
+creates a user
 
 **Parameters**
 
@@ -64,7 +89,9 @@ Client for the admin-only user endpoints.
 ): Promise<UserActionResult<AuthenticatedUser>>"
 />
 
-<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L126" sourceLabel="UserAdminService.ts:126" />
+<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L141" sourceLabel="UserAdminService.ts:141" />
+
+deletes an user
 
 **Parameters**
 
@@ -76,32 +103,13 @@ Client for the admin-only user endpoints.
 
 <MemberHeading id="listusers" depth="3" name="listUsers" sig="listUsers(): Promise<UserActionResult<AuthenticatedUser[]>>" />
 
-<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L25" sourceLabel="UserAdminService.ts:25" />
+<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L28" sourceLabel="UserAdminService.ts:28" />
+
+list all users
 
 **Returns**
 
 - `Promise<`[`UserActionResult`](/module/plugin-obsync-src-auth-auth/types/useractionresult)`<AuthenticatedUser[]>>`
-
-<MemberHeading
-  id="resetuserpassword"
-  depth="3"
-  name="resetUserPassword"
-  sig="resetUserPassword(
-	userId: number,
-	newPassword: string,
-): Promise<UserActionResult<AuthenticatedUser>>"
-/>
-
-<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L149" sourceLabel="UserAdminService.ts:149" />
-
-**Parameters**
-
-- `userId` (number)
-- `newPassword` (string)
-
-**Returns**
-
-- `Promise<`[`UserActionResult`](/module/plugin-obsync-src-auth-auth/types/useractionresult)`<AuthenticatedUser>>`
 
 <MemberHeading
   id="updateusername"
@@ -113,7 +121,9 @@ Client for the admin-only user endpoints.
 ): Promise<UserActionResult<AuthenticatedUser>>"
 />
 
-<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L137" sourceLabel="UserAdminService.ts:137" />
+<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L152" sourceLabel="UserAdminService.ts:152" />
+
+updates the name of an user
 
 **Parameters**
 
@@ -134,7 +144,9 @@ Client for the admin-only user endpoints.
 ): Promise<UserActionResult<AuthenticatedUser>>"
 />
 
-<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L102" sourceLabel="UserAdminService.ts:102" />
+<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L117" sourceLabel="UserAdminService.ts:117" />
+
+Updates the user role
 
 **Parameters**
 
@@ -155,7 +167,9 @@ Client for the admin-only user endpoints.
 ): Promise<UserActionResult<AuthenticatedUser>>"
 />
 
-<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L114" sourceLabel="UserAdminService.ts:114" />
+<MemberMeta badges="async" sourceHref="/source/plugin/obsync/src/auth/useradminservice-ts/#L129" sourceLabel="UserAdminService.ts:129" />
+
+updates an user role
 
 **Parameters**
 

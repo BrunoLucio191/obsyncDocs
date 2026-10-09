@@ -7,7 +7,7 @@ description: Entry point of the Yjs backend for the rest of the server.
 
 # YjsCollaborationServer
 
-<SourceLink href="/source/backend/yjs/yjscollaborationserver-ts/#L22" label="YjsCollaborationServer.ts:22" />
+<SourceLink href="/source/backend/yjs/yjscollaborationserver-ts/#L24" label="YjsCollaborationServer.ts:24" />
 
 Entry point of the Yjs backend for the rest of the server.
 
@@ -27,7 +27,7 @@ Entry point of the Yjs backend for the rest of the server.
 
 <MemberHeading id="clearpathdeleted" depth="3" name="clearPathDeleted" sig="clearPathDeleted(targetPath: string): void" />
 
-<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L45" sourceLabel="YjsCollaborationServer.ts:45" />
+<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L48" sourceLabel="YjsCollaborationServer.ts:48" />
 
 **Parameters**
 
@@ -39,7 +39,7 @@ Entry point of the Yjs backend for the rest of the server.
 
 <MemberHeading id="deletepersistedstateunderpath" depth="3" name="deletePersistedStateUnderPath" sig="deletePersistedStateUnderPath(targetPath: string): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L49" sourceLabel="YjsCollaborationServer.ts:49" />
+<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L52" sourceLabel="YjsCollaborationServer.ts:52" />
 
 **Parameters**
 
@@ -51,7 +51,7 @@ Entry point of the Yjs backend for the rest of the server.
 
 <MemberHeading id="isdocumentinvalidated" depth="3" name="isDocumentInvalidated" sig="isDocumentInvalidated(doc: Doc): boolean" />
 
-<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L36" sourceLabel="YjsCollaborationServer.ts:36" />
+<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L39" sourceLabel="YjsCollaborationServer.ts:39" />
 
 **Parameters**
 
@@ -63,7 +63,7 @@ Entry point of the Yjs backend for the rest of the server.
 
 <MemberHeading id="ispathdeleted" depth="3" name="isPathDeleted" sig="isPathDeleted(filePath: string): boolean" />
 
-<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L32" sourceLabel="YjsCollaborationServer.ts:32" />
+<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L35" sourceLabel="YjsCollaborationServer.ts:35" />
 
 **Parameters**
 
@@ -75,7 +75,7 @@ Entry point of the Yjs backend for the rest of the server.
 
 <MemberHeading id="markpathdeleted" depth="3" name="markPathDeleted" sig="markPathDeleted(targetPath: string): void" />
 
-<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L40" sourceLabel="YjsCollaborationServer.ts:40" />
+<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L43" sourceLabel="YjsCollaborationServer.ts:43" />
 
 **Parameters**
 
@@ -95,7 +95,7 @@ Entry point of the Yjs backend for the rest of the server.
 ): Promise<void>"
 />
 
-<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L57" sourceLabel="YjsCollaborationServer.ts:57" />
+<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L60" sourceLabel="YjsCollaborationServer.ts:60" />
 
 **Parameters**
 
@@ -108,7 +108,7 @@ Entry point of the Yjs backend for the rest of the server.
 
 <MemberHeading id="setpersistence" depth="3" name="setPersistence" sig="setPersistence(adapter: YjsPersistenceAdapter): void" />
 
-<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L28" sourceLabel="YjsCollaborationServer.ts:28" />
+<MemberMeta sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L31" sourceLabel="YjsCollaborationServer.ts:31" />
 
 **Parameters**
 
@@ -129,7 +129,7 @@ Entry point of the Yjs backend for the rest of the server.
 ): Promise<YjsRoom>"
 />
 
-<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L67" sourceLabel="YjsCollaborationServer.ts:67" />
+<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjscollaborationserver-ts/#L70" sourceLabel="YjsCollaborationServer.ts:70" />
 
 **Parameters**
 

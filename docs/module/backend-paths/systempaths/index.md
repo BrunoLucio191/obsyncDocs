@@ -2,7 +2,7 @@
 title: systemPaths
 kind: variable
 longname: module:backend/paths.systemPaths
-description: Resolved from the backend's own folder, so the working directory doesn't matter.
+description: An object with all the paths from the data folder Resolved from the backend's own folder, so the working directory doesn't matter.
 ---
 
 # systemPaths
@@ -20,9 +20,9 @@ description: Resolved from the backend's own folder, so the working directory do
 }"
 />
 
-<SourceLink href="/source/backend/paths-ts/#L7" label="paths.ts:7" />
+<SourceLink href="/source/backend/paths-ts/#L9" label="paths.ts:9" />
 
-Resolved from the backend's own folder, so the working directory doesn't matter.
+An object with all the paths from the data folder Resolved from the backend's own folder, so the working directory doesn't matter.
 
 **Properties**
 

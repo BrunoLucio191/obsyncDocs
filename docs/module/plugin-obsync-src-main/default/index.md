@@ -2,11 +2,14 @@
 title: default
 kind: class
 longname: module:plugin/obSync/src/main.default
+description: ObSync plugin class
 ---
 
 # default
 
 <SourceLink href="/source/plugin/obsync/src/main-ts/#L30" label="main.ts:30" />
+
+ObSync plugin class
 
 ---
 
@@ -932,13 +935,3 @@ Unload this component and its children
 <MemberHeading id="obsyncapp" depth="3" name="obsyncApp" sig="obsyncApp: default" />
 
 <MemberMeta badges="static" sourceHref="/source/plugin/obsync/src/main-ts/#L32" sourceLabel="main.ts:32" />
-
-## Static Methods
-
-<MemberHeading id="sameappintance" depth="3" name="sameAppIntance" sig="sameAppIntance(): default" />
-
-<MemberMeta badges="static" sourceHref="/source/plugin/obsync/src/main-ts/#L336" sourceLabel="main.ts:336" />
-
-**Returns**
-
-- `default`

@@ -7,7 +7,7 @@ description: Admin-only account list. Controls that would lock out the last acti
 
 # UserListSection
 
-<SourceLink href="/source/plugin/obsync/src/settings/users/userlistsection-ts/#L15" label="UserListSection.ts:15" />
+<SourceLink href="/source/plugin/obsync/src/settings/users/userlistsection-ts/#L19" label="UserListSection.ts:19" />
 
 Admin-only account list. Controls that would lock out the last active admin are disabled.
 
@@ -20,8 +20,8 @@ Admin-only account list. Controls that would lock out the last active admin are 
   depth="3"
   name="constructor"
   sig="new UserListSection(
-	controller: default,
-	directory: UserDirectory,
+	plugin: default,
+	userDirectory: UserDirectory,
 	nameEditor: UserNameEditor,
 	refresh: () => void,
 ): UserListSection"
@@ -29,8 +29,8 @@ Admin-only account list. Controls that would lock out the last active admin are 
 
 **Parameters**
 
-- `controller` (default)
-- `directory` ([UserDirectory](/module/plugin-obsync-src-settings-users-userdirectory/userdirectory))
+- `plugin` (default)
+- `userDirectory` ([UserDirectory](/module/plugin-obsync-src-settings-users-userdirectory/userdirectory))
 - `nameEditor` ([UserNameEditor](/module/plugin-obsync-src-settings-users-usernameeditor/usernameeditor))
 - `refresh` (() => void)
 
@@ -44,7 +44,7 @@ Admin-only account list. Controls that would lock out the last active admin are 
 
 <MemberHeading id="definitions" depth="3" name="definitions" sig="definitions(): SettingDefinitionItem[]" />
 
-<MemberMeta sourceHref="/source/plugin/obsync/src/settings/users/userlistsection-ts/#L40" sourceLabel="UserListSection.ts:40" />
+<MemberMeta sourceHref="/source/plugin/obsync/src/settings/users/userlistsection-ts/#L44" sourceLabel="UserListSection.ts:44" />
 
 Also starts the lazy load; `listGroup` stays empty until it finishes.
 
@@ -54,7 +54,7 @@ Also starts the lazy load; `listGroup` stays empty until it finishes.
 
 <MemberHeading id="destroy" depth="3" name="destroy" sig="destroy(): void" />
 
-<MemberMeta sourceHref="/source/plugin/obsync/src/settings/users/userlistsection-ts/#L123" sourceLabel="UserListSection.ts:123" />
+<MemberMeta sourceHref="/source/plugin/obsync/src/settings/users/userlistsection-ts/#L117" sourceLabel="UserListSection.ts:117" />
 
 **Returns**
 

@@ -13,7 +13,7 @@ longname: module:backend/yjs/yjsUtils/wsTransport.utils.sendBinaryMessage
 ): void"
 />
 
-<SourceLink href="/source/backend/yjs/yjsutils/wstransport-utils-ts/#L18" label="wsTransport.utils.ts:18" />
+<SourceLink href="/source/backend/yjs/yjsutils/wstransport-utils-ts/#L21" label="wsTransport.utils.ts:21" />
 
 **Parameters**
 

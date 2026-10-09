@@ -102,6 +102,14 @@ Not called when [getSettingDefinitions](/module/plugin-obsync-src-settings-obsyn
 * **See:**
   - [https://docs.obsidian.md/Plugins/User+interface/Settings#Register+a+settings+tab](https://docs.obsidian.md/Plugins/User+interface/Settings#Register+a+settings+tab)
 
+<MemberHeading id="getallconfiguration" depth="3" name="getAllConfiguration" sig="getAllConfiguration(): SettingDefinitionItem[]" />
+
+<MemberMeta sourceHref="/source/plugin/obsync/src/settings/obsyncsettingtab-ts/#L34" sourceLabel="ObSyncSettingTab.ts:34" />
+
+**Returns**
+
+- `SettingDefinitionItem[]`
+
 <MemberHeading id="getcontrolvalue" depth="3" name="getControlValue" sig="getControlValue(key: string): unknown" />
 
 <MemberMeta sourceHref="/source/node-modules/obsidian/obsidian-d-ts/#L5165" sourceLabel="obsidian.d.ts:5165" />
@@ -122,7 +130,7 @@ Reads from `this.plugin.settings`. Override to read from a different data source
 
 <MemberHeading id="getsettingdefinitions" depth="3" name="getSettingDefinitions" sig="getSettingDefinitions(): SettingDefinitionItem[]" />
 
-<MemberMeta sourceHref="/source/plugin/obsync/src/settings/obsyncsettingtab-ts/#L35" sourceLabel="ObSyncSettingTab.ts:35" />
+<MemberMeta sourceHref="/source/plugin/obsync/src/settings/obsyncsettingtab-ts/#L59" sourceLabel="ObSyncSettingTab.ts:59" />
 
 _Overrides&#x20;_`getSettingDefinitions`
 
@@ -134,7 +142,7 @@ _Overrides&#x20;_`getSettingDefinitions`
 
 <MemberHeading id="hide" depth="3" name="hide" sig="hide(): void" />
 
-<MemberMeta sourceHref="/source/plugin/obsync/src/settings/obsyncsettingtab-ts/#L60" sourceLabel="ObSyncSettingTab.ts:60" />
+<MemberMeta sourceHref="/source/plugin/obsync/src/settings/obsyncsettingtab-ts/#L63" sourceLabel="ObSyncSettingTab.ts:63" />
 
 _Overrides&#x20;_`hide`
 

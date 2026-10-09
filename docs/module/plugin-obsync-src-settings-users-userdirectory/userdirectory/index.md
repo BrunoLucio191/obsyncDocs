@@ -35,6 +35,8 @@ Local copy of the user list, updated after each action so the UI doesn't re-fetc
 
 <MemberMeta sourceHref="/source/plugin/obsync/src/settings/users/userdirectory-ts/#L69" sourceLabel="UserDirectory.ts:69" />
 
+Count the number of admins in the plugin
+
 **Returns**
 
 - `number`
@@ -56,6 +58,8 @@ Ignores an id already cached, so a stale double call can't duplicate a row.
 <MemberHeading id="all" depth="3" name="all" sig="all(): AuthenticatedUser[]" />
 
 <MemberMeta sourceHref="/source/plugin/obsync/src/settings/users/userdirectory-ts/#L75" sourceLabel="UserDirectory.ts:75" />
+
+Return an array with all users
 
 **Returns**
 

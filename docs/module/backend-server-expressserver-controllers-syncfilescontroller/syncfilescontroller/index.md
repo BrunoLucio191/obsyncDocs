@@ -38,7 +38,7 @@ Orquestrate files/directories modifications done via http routes as a single obj
 
 <MemberHeading id="create" depth="3" name="create" sig="create(req: Request, res: Response): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L98" sourceLabel="SyncFilesController.ts:98" />
+<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L109" sourceLabel="SyncFilesController.ts:109" />
 
 Crestes files or directories in the canonical Vault, also modifies the YjsPersistence
 
@@ -53,7 +53,7 @@ Crestes files or directories in the canonical Vault, also modifies the YjsPersis
 
 <MemberHeading id="createfile" depth="3" name="createFile" sig="createFile(req: Request, res: Response): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L279" sourceLabel="SyncFilesController.ts:279" />
+<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L290" sourceLabel="SyncFilesController.ts:290" />
 
 Expects the raw body already parsed by `express.raw` in the route.
 
@@ -68,7 +68,7 @@ Expects the raw body already parsed by `express.raw` in the route.
 
 <MemberHeading id="delete" depth="3" name="delete" sig="delete(req: Request, res: Response): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L148" sourceLabel="SyncFilesController.ts:148" />
+<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L159" sourceLabel="SyncFilesController.ts:159" />
 
 **Parameters**
 
@@ -81,7 +81,7 @@ Expects the raw body already parsed by `express.raw` in the route.
 
 <MemberHeading id="getfile" depth="3" name="getFile" sig="getFile(req: Request, res: Response): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L316" sourceLabel="SyncFilesController.ts:316" />
+<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L327" sourceLabel="SyncFilesController.ts:327" />
 
 **Parameters**
 
@@ -94,9 +94,9 @@ Expects the raw body already parsed by `express.raw` in the route.
 
 <MemberHeading id="initsync" depth="3" name="initSync" sig="initSync(req: Request, res: Response): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L59" sourceLabel="SyncFilesController.ts:59" />
+<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L65" sourceLabel="SyncFilesController.ts:65" />
 
-Responsible for doing the inital sync on the whole vault, download all the missing changes while offline 204 when the client's `X-ObSync-Gene` matches the current gene, otherwise the zip with the current gene.
+Responsible for doing the inital sync on the whole vault, download all the missing changes while offline. 204 when the client's `X-ObSync-Gene` matches the current gene, otherwise the zip with the current gene.
 
 **Parameters**
 
@@ -109,7 +109,7 @@ Responsible for doing the inital sync on the whole vault, download all the missi
 
 <MemberHeading id="modify" depth="3" name="modify" sig="modify(req: Request, res: Response): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L183" sourceLabel="SyncFilesController.ts:183" />
+<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L194" sourceLabel="SyncFilesController.ts:194" />
 
 **Parameters**
 
@@ -122,7 +122,7 @@ Responsible for doing the inital sync on the whole vault, download all the missi
 
 <MemberHeading id="rename" depth="3" name="rename" sig="rename(req: Request, res: Response): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L217" sourceLabel="SyncFilesController.ts:217" />
+<MemberMeta badges="async" sourceHref="/source/backend/server/expressserver/controllers/syncfilescontroller-ts/#L228" sourceLabel="SyncFilesController.ts:228" />
 
 Route responsible for dealing with all the renames
 

@@ -62,7 +62,7 @@ returns the number of files and the byteSize from the whole vault, doesn't count
 
 **Parameters**
 
-- `vaultDirectory` (string, default: "...")
+- `vaultDirectory` (string)
 
 **Returns**
 

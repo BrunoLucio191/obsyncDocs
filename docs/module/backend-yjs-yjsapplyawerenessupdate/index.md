@@ -12,4 +12,4 @@ longname: module:backend/yjs/YjsApplyAwerenessUpdate
 
 ## Functions
 
-- [`ApplyAwerenessUpdate`](/module/backend-yjs-yjsapplyawerenessupdate/applyawerenessupdate)
+- [`applyAwerenessUpdate`](/module/backend-yjs-yjsapplyawerenessupdate/applyawerenessupdate)

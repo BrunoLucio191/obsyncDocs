@@ -15,7 +15,7 @@ description: The reason is cut to the protocol's 123-byte limit.
 ): void"
 />
 
-<SourceLink href="/source/backend/yjs/yjsutils/wstransport-utils-ts/#L33" label="wsTransport.utils.ts:33" />
+<SourceLink href="/source/backend/yjs/yjsutils/wstransport-utils-ts/#L36" label="wsTransport.utils.ts:36" />
 
 The reason is cut to the protocol's 123-byte limit.
 

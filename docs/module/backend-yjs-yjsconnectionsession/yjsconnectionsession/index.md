@@ -6,7 +6,7 @@ longname: module:backend/yjs/YjsConnectionSession.YjsConnectionSession
 
 # YjsConnectionSession
 
-<SourceLink href="/source/backend/yjs/yjsconnectionsession-ts/#L23" label="YjsConnectionSession.ts:23" />
+<SourceLink href="/source/backend/yjs/yjsconnectionsession-ts/#L24" label="YjsConnectionSession.ts:24" />
 
 ---
 
@@ -22,6 +22,7 @@ longname: module:backend/yjs/YjsConnectionSession.YjsConnectionSession
 	connectionState: YjsConnectionState,
 	deletedPaths: DeletedPathRegistry,
 	syncHandler: SyncMessageHandlerFn,
+	messageCounter: WebSocketMessageCounter<WebSocket, number>,
 ): YjsConnectionSession"
 />
 
@@ -32,6 +33,7 @@ longname: module:backend/yjs/YjsConnectionSession.YjsConnectionSession
 - `connectionState` ([YjsConnectionState](/module/backend-yjs-yjs/types/yjsconnectionstate))
 - `deletedPaths` ([DeletedPathRegistry](/module/backend-yjs-deletedpathregistry/deletedpathregistry))
 - `syncHandler` ([SyncMessageHandlerFn](/module/backend-yjs-syncmessagehandler/syncmessagehandlerfn))
+- `messageCounter` ([WebSocketMessageCounter](/module/backend-yjs-yjsutils-messagecounter/utils/websocketmessagecounter)\<WebSocket, number>)
 
 **Returns**
 
@@ -43,12 +45,14 @@ longname: module:backend/yjs/YjsConnectionSession.YjsConnectionSession
 
 <MemberHeading id="handlerawmessage" depth="3" name="handleRawMessage" sig="handleRawMessage(rawData: RawData, isBinary: boolean): void" />
 
-<MemberMeta sourceHref="/source/backend/yjs/yjsconnectionsession-ts/#L44" sourceLabel="YjsConnectionSession.ts:44" />
+<MemberMeta sourceHref="/source/backend/yjs/yjsconnectionsession-ts/#L52" sourceLabel="YjsConnectionSession.ts:52" />
+
+Receives the raw message and adds that to the queue
 
 **Parameters**
 
 - `rawData` (RawData)
-- `isBinary` (boolean)
+- `isBinary` (boolean) — if the data received is not binary, the connection is closed
 
 **Returns**
 

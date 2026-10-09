@@ -13,7 +13,7 @@ longname: module:backend/yjs/yjsUtils/wsTransport.utils.readBoundedByteArray
 ): Uint8Array"
 />
 
-<SourceLink href="/source/backend/yjs/yjsutils/wstransport-utils-ts/#L58" label="wsTransport.utils.ts:58" />
+<SourceLink href="/source/backend/yjs/yjsutils/wstransport-utils-ts/#L61" label="wsTransport.utils.ts:61" />
 
 **Parameters**
 

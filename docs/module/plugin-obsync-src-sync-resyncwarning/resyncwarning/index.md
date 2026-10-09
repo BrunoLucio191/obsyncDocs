@@ -103,7 +103,7 @@ Hide the modal.
 
 <MemberHeading id="onclose" depth="3" name="onClose" sig="onClose(): void" />
 
-<MemberMeta sourceHref="/source/plugin/obsync/src/sync/resyncwarning-ts/#L23" sourceLabel="ReSyncWarning.ts:23" />
+<MemberMeta sourceHref="/source/plugin/obsync/src/sync/resyncwarning-ts/#L22" sourceLabel="ReSyncWarning.ts:22" />
 
 _Overrides&#x20;_`onClose`
 

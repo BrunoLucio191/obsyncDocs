@@ -1,14 +1,14 @@
 ---
-title: ApplyAwerenessUpdate
+title: applyAwerenessUpdate
 kind: function
-longname: module:backend/yjs/YjsApplyAwerenessUpdate.ApplyAwerenessUpdate
+longname: module:backend/yjs/YjsApplyAwerenessUpdate.applyAwerenessUpdate
 description: receives an awareness update and applies it
 ---
 
-# ApplyAwerenessUpdate
+# applyAwerenessUpdate
 
 <Signature
-  code="ApplyAwerenessUpdate(
+  code="applyAwerenessUpdate(
 	room: YjsRoom,
 	connection: WebSocket,
 	update: Uint8Array,
