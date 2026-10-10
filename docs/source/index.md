@@ -18,7 +18,6 @@ kind: guide
 - [backend/queue/KeyedLock.ts](/source/backend/queue/keyedlock-ts/)
 - [backend/queue/Queue.ts](/source/backend/queue/queue-ts/)
 - [backend/queue/QueueManager.ts](/source/backend/queue/queuemanager-ts/)
-- [backend/scratch.ts](/source/backend/scratch-ts/)
 - [backend/scripts/makeDataPaths.ts](/source/backend/scripts/makedatapaths-ts/)
 - [backend/scripts/setupDatabase.ts](/source/backend/scripts/setupdatabase-ts/)
 - [backend/Server/ExpressServer/controllers/AuthController.ts](/source/backend/server/expressserver/controllers/authcontroller-ts/)

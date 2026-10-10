@@ -40,14 +40,16 @@ Saves each document twice: the binary Yjs state (the authority) and a markdown m
 
 ## Methods
 
-<MemberHeading id="bindstate" depth="3" name="bindState" sig="bindState(docName: string, ydoc: Doc): Promise<void>" />
+<MemberHeading id="bindstate" depth="3" name="bindState" sig="bindState(docPath: string, ydoc: Doc): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L45" sourceLabel="YjsPersistence.ts:45" />
+<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L50" sourceLabel="YjsPersistence.ts:50" />
+
+Decode the file name, reads the binary state , apply the binary update and bind the Y.doc to the state inside a map
 
 **Parameters**
 
-- `docName` (string)
-- `ydoc` (Doc)
+- `docPath` (string) — docName is the path
+- `ydoc` (Doc) — the ydoc document that is shared between users
 
 **Returns**
 
@@ -55,9 +57,9 @@ Saves each document twice: the binary Yjs state (the authority) and a markdown m
 
 <MemberHeading id="deletestateunderpath" depth="3" name="deleteStateUnderPath" sig="deleteStateUnderPath(targetPath: string): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L102" sourceLabel="YjsPersistence.ts:102" />
+<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L109" sourceLabel="YjsPersistence.ts:109" />
 
-File or whole folder, so old state can't resurface if the path is reused.
+Delete a files or whole folder and the directories inside of it
 
 **Parameters**
 
@@ -69,7 +71,7 @@ File or whole folder, so old state can't resurface if the path is reused.
 
 <MemberHeading id="destroystate" depth="3" name="destroyState" sig="destroyState(_docName: string, ydoc: Doc): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L92" sourceLabel="YjsPersistence.ts:92" />
+<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L97" sourceLabel="YjsPersistence.ts:97" />
 
 **Parameters**
 
@@ -82,7 +84,7 @@ File or whole folder, so old state can't resurface if the path is reused.
 
 <MemberHeading id="renamestatepath" depth="3" name="renameStatePath" sig="renameStatePath(oldPath: string, newPath: string): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L114" sourceLabel="YjsPersistence.ts:114" />
+<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L127" sourceLabel="YjsPersistence.ts:127" />
 
 Keeps the collaboration history across a vault rename.
 
@@ -95,13 +97,13 @@ Keeps the collaboration history across a vault rename.
 
 - `Promise<void>`
 
-<MemberHeading id="writestate" depth="3" name="writeState" sig="writeState(docName: string, ydoc: Doc): Promise<void>" />
+<MemberHeading id="writestate" depth="3" name="writeState" sig="writeState(docPath: string, ydoc: Doc): Promise<void>" />
 
-<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L85" sourceLabel="YjsPersistence.ts:85" />
+<MemberMeta badges="async" sourceHref="/source/backend/yjs/yjspersistence-ts/#L90" sourceLabel="YjsPersistence.ts:90" />
 
 **Parameters**
 
-- `docName` (string)
+- `docPath` (string)
 - `ydoc` (Doc)
 
 **Returns**
